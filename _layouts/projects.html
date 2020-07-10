@@ -20,5 +20,23 @@ layout: base
 
 <div id="body">
   <div class="content">
+    <div class="projects-list">
+      {% for project in site.data.projects %}
+        <article class="project">
+          <h2>{{ project.name }}</h2>
+          {{ project.description | markdownify }}
+          {% if project.extra %}
+            <div class="extra">
+              {% for entry in project.extra %}
+                <div class="extra_row">
+                  <div class="extra_label">{{ entry.label }}</div>
+                  <div class="extra_content">{{ entry.content }}</div>
+                </div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </article>
+      {% endfor %}
+    </div>
   </div>
 </div>
