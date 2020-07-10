@@ -66,6 +66,12 @@ layout: base
                   <div class="stats_language_entry" style="width: {{ language.weight | times:100 }}%;{% if color %} background-color: {{ color }}{% endif %}"></div>
                 {% endfor %}
               </div>
+
+              <div class="stats_link">
+                <a href={{ repo.url }}>
+                  /{{ project.repo.owner }}/{{ project.repo.name }}
+                </a>
+              </div>
             </div>
           {% endif %}
         </article>

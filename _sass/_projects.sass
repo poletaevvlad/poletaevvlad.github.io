@@ -35,8 +35,11 @@
   margin: 1rem 0
   font-size: 0
   height: 1rem
+  display: flex
+  align-items: center
 
 .stats_numeric
+  flex: 0 0 150px
   width: 150px
   display: inline-block
   height: 1rem
@@ -69,11 +72,11 @@
 $unknown-lang-color: #CCC
 
 .stats_languages
+  flex: 0 0 300px
   width: 300px
   height: 5px
   background-color: $unknown-lang-color
   display: inline-block
-  transform: translate(0, -0.1rem)
   font-size: 0
   line-height: 5px
   overflow-x: hidden
@@ -84,3 +87,28 @@ $unknown-lang-color: #CCC
   background-color: $unknown-lang-color
   box-shadow: -1px 0 $bg-color
 
+.stats_link
+  flex: 1 1
+  display: inline-block
+  text-align: right
+
+  a
+    text-decoration: none
+    color: $text-color
+    font-size: 11px
+    position: relative
+    padding-left: 20px
+    line-height: 1rem
+    display: inline-block
+
+    &::before
+      font-size: 0
+      content: " "
+      position: absolute
+      width: 18px
+      height: 18px
+      left: 0
+      top: 0
+      background-image: url("./images/icons.svg")
+      background-repeat: no-repeat
+      background-position: 0 -36px
