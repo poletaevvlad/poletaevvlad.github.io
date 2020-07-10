@@ -4,7 +4,17 @@ layout: base
 
 <header id="header">
   <div class="content">
-    header
+    <nav id="header-nav">
+      {% for link in site.navigation %}
+        <a href="{{ link.url }}">{{ link.label }}</a>
+      {% endfor %}
+    </nav>
+
+    <h1>{{ page.title }}</h1>
+    <nav id="variants">
+      <a href="/" class="current">eng</a>
+      <a href="/rus/">rus</a>
+    </nav>
   </div>
 </header>
 

@@ -6,5 +6,11 @@ include:
   - _pages
 
 sass:
-    sass_dir: _sass
-    style: compressed
+  sass_dir: _sass
+  style: compressed
+
+navigation:
+  - url: https://github.com/poletaevvlad
+    label: GitHub
+  - url: sourcerer.io/poletaevvlad
+    label: Sourcerer

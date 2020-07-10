@@ -2,3 +2,40 @@
 
 #header
   background-color: $bg-darker-color
+
+  &::before, &::after
+    font-size: 0
+    content: " "
+    display: block
+
+  h1
+    font-size: 26px
+    line-height: 3rem
+    font-weight: 500
+
+  nav
+    text-align: right
+
+    a
+      text-decoration: none
+      color: $link-color
+      margin-left: 32px
+      font-size: 13px
+      display: inline-block
+
+      &:first-child
+        margin-left: 0
+
+      &.current
+        color: $text-color
+        font-weight: 500
+
+#header-nav
+  padding: 1rem 0
+
+#variants
+  float: right
+  margin-top: -2rem
+
+  a
+    margin-left: 15px !important
