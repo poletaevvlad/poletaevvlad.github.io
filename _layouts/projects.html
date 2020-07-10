@@ -25,6 +25,8 @@ layout: base
         <article class="project">
           {% if project.repo %}
             {% assign repo = site.data.repos_info[project.repo.owner][project.repo.name] %}
+          {% else %}
+            {% assign repo = null %}
           {% endif %}
           <h2>
             {% if project.name %}
@@ -47,6 +49,17 @@ layout: base
                   <div class="extra_content">{{ entry.content }}</div>
                 </div>
               {% endfor %}
+            </div>
+          {% endif %}
+
+          {% if repo %}
+            <div class="repo_stats">
+              <div class="stats_numeric">
+                <div class="stat_commits_count">{{ repo.commits_count }}</div>
+                {% if repo.stars > 0 %}
+                  <div class="stat_stars_count">{{ repo.stars }}</div>
+                {% endif %}
+              </div>
             </div>
           {% endif %}
         </article>

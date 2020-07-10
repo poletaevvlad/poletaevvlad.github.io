@@ -29,3 +29,38 @@
   .extra_content
     display: table-cell
     font-weight: 500
+
+
+.repo_stats
+  margin: 1rem 0
+
+.stats_numeric
+  width: 150px
+  font-size: 0
+  height: 1rem
+
+  .stat_commits_count,
+  .stat_stars_count
+    min-width: 45px
+    position: relative
+    padding-left: 25px
+    display: inline-block
+    font-size: 13px
+
+    &::before
+      content: " "
+      font-size: 0
+      position: absolute
+      left: 0
+      top: 0
+      width: 18px
+      height: 18px
+      background-image: url("./images/icons.svg")
+      background-repeat: no-repeat
+
+  .stat_stars_count::before
+    background-position: 0 0
+
+  .stat_commits_count::before
+    background-position: 0 -18px
+
