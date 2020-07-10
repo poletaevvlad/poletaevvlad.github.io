@@ -33,10 +33,12 @@
 
 .repo_stats
   margin: 1rem 0
+  font-size: 0
+  height: 1rem
 
 .stats_numeric
   width: 150px
-  font-size: 0
+  display: inline-block
   height: 1rem
 
   .stat_commits_count,
@@ -63,4 +65,22 @@
 
   .stat_commits_count::before
     background-position: 0 -18px
+
+$unknown-lang-color: #CCC
+
+.stats_languages
+  width: 300px
+  height: 5px
+  background-color: $unknown-lang-color
+  display: inline-block
+  transform: translate(0, -0.1rem)
+  font-size: 0
+  line-height: 5px
+  overflow-x: hidden
+
+.stats_language_entry
+  display: inline-block
+  height: 5px
+  background-color: $unknown-lang-color
+  box-shadow: -1px 0 $bg-color
 

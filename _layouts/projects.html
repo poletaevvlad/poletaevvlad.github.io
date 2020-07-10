@@ -60,6 +60,12 @@ layout: base
                   <div class="stat_stars_count">{{ repo.stars }}</div>
                 {% endif %}
               </div>
+              <div class="stats_languages">
+                {% for language in repo.languages %}
+                  {% assign color=site.data.languages[language.language] %}
+                  <div class="stats_language_entry" style="width: {{ language.weight | times:100 }}%;{% if color %} background-color: {{ color }}{% endif %}"></div>
+                {% endfor %}
+              </div>
             </div>
           {% endif %}
         </article>
