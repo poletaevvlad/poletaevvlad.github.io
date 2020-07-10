@@ -23,8 +23,22 @@ layout: base
     <div class="projects-list">
       {% for project in site.data.projects %}
         <article class="project">
-          <h2>{{ project.name }}</h2>
-          {{ project.description | markdownify }}
+          {% if project.repo %}
+            {% assign repo = site.data.repos_info[project.repo.owner][project.repo.name] %}
+          {% endif %}
+          <h2>
+            {% if project.name %}
+              {{ project.name }}
+            {% else %}
+              {{ repo.name }}
+            {% endif %}
+          </h2>
+          {% if project.description %}
+            {{ project.description | markdownify }}
+          {% else %}
+            <p>{{ repo.description }}</p>
+          {% endif %}
+
           {% if project.extra %}
             <div class="extra">
               {% for entry in project.extra %}
