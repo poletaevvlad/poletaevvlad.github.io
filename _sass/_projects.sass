@@ -32,11 +32,12 @@
 
 
 .repo_stats
-  margin: 1rem 0
+  margin: 1rem 0 2rem
   font-size: 0
   height: 1rem
   display: flex
   align-items: center
+  position: relative
 
 .stats_numeric
   flex: 0 0 150px
@@ -51,6 +52,7 @@
     padding-left: 25px
     display: inline-block
     font-size: 13px
+    display: relative
 
     &::before
       content: " "
@@ -62,6 +64,22 @@
       height: 18px
       background-image: url("./images/icons.svg")
       background-repeat: no-repeat
+
+    .stat_description
+      position: absolute
+      left: 9px
+      top: 1rem
+      white-space: nowrap
+      padding-left: 5px
+      border-left: 1px solid fade-out($text-color, 0.5)
+      opacity: 0
+      transition: opacity 0.2s, transform 0.2s
+      transform: translate(0, -3px)
+      font-size: 11px
+
+    &:hover .stat_description
+      opacity: 1
+      transform: translate(0, 0)
 
   .stat_stars_count::before
     background-position: 0 0
@@ -86,6 +104,37 @@ $unknown-lang-color: #CCC
   height: 5px
   background-color: $unknown-lang-color
   box-shadow: -1px 0 $bg-color
+
+.stats_languages_details
+  position: absolute
+  left: 0
+  top: 1rem
+  right: 100px
+  text-align: center
+  opacity: 0
+  transition: opacity 0.2s, transform 0.2s
+  transform: translate(0, -3px)
+
+.stats_languages:hover + .stats_languages_details
+  transform: translate(0, 0)
+  opacity: 1
+
+.stats_language_text
+  display: inline-block
+  font-size: 11px
+  margin: 0 10px
+  font-weight: 500
+
+.stats_language_percentage
+  font-weight: 400
+
+.stats_language_color
+  display: inline-block
+  width: 8px
+  height: 8px
+  background-color: $unknown-lang-color
+  vertical-align: middle
+  border-radius: 2px
 
 .stats_link
   flex: 1 1

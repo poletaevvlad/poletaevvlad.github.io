@@ -55,15 +55,35 @@ layout: base
           {% if repo %}
             <div class="repo_stats">
               <div class="stats_numeric">
-                <div class="stat_commits_count">{{ repo.commits_count }}</div>
+                <div class="stat_commits_count">
+                  {{ repo.commits_count }}
+                  <div class="stat_description">Commits count</div>
+                </div>
                 {% if repo.stars > 0 %}
-                  <div class="stat_stars_count">{{ repo.stars }}</div>
+                  <div class="stat_stars_count">
+                    {{ repo.stars }}
+                    <div class="stat_description">Stargazers count</div>
+                  </div>
                 {% endif %}
               </div>
+
               <div class="stats_languages">
                 {% for language in repo.languages %}
                   {% assign color=site.data.languages[language.language] %}
                   <div class="stats_language_entry" style="width: {{ language.weight | times:100 }}%;{% if color %} background-color: {{ color }}{% endif %}"></div>
+                {% endfor %}
+              </div>
+
+              <div class="stats_languages_details">
+                {% for language in repo.languages %}
+                  <span class="stats_language_text">
+                    {% assign color=site.data.languages[language.language] %}
+                    <span class="stats_language_color"{% if color %} style="background-color: {{ color }}"{% endif %}></span>
+                    {{ language.language }}
+                    <span class="stats_language_percentage">
+                      ({{ language.weight | times:100 | round:1 }}%)
+                    </span>
+                  </span>
                 {% endfor %}
               </div>
 
