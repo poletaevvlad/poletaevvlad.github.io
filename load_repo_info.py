@@ -11,17 +11,35 @@ def load_repo_requests(data_dir):
     return ((r["owner"], r["repo"]) for r in repos)
 
 
+def retrieve_languages(owner, repo):
+    url = f"https://api.github.com/repos/{owner}/{repo}/languages"
+    response = requests.get(url)
+    if response.status_code != 200:
+        content = response.content.decode("utf-8")
+        raise RuntimeError("Cannot load languages: " + content)
+
+
+    data = response.json()
+    total_weight = sum(data.values())
+    return [
+        {"language": language, "weight": weight / total_weight}
+        for language, weight in data.items()
+    ]
+
+
 def retrieve_repo_info(owner, repo):
     response = requests.get(f"https://api.github.com/repos/{owner}/{repo}")
     if response.status_code != 200:
-        raise RuntimeError("Repository does not exist: " + response.content)
+        content = response.content.decode("utf-8")
+        raise RuntimeError("Repository does not exist: " + content)
 
     data = response.json()
     return {
         "name": data["name"],
         "description": data["description"],
         "stars": data["stargazers_count"],
-        "url": data["html_url"]
+        "url": data["html_url"],
+        "languages": retrieve_languages(owner, repo)
     }
 
 
