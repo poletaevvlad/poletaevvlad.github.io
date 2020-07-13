@@ -1,0 +1,72 @@
+- description: |
+    Procedural domain-specific *staticly* and strongly typed programming language
+    for solving twisting cube puzzles, such as Rubik’s cubes. Compiles into
+    Python porgram.
+  extra:
+    - label: "Technology stack:"
+      content: Python, Lark parser
+  repo:
+    owner: poletaevvlad
+    name: cubelang
+
+- description: |
+    A Telegram-bot that generates images of punched cards and punched tapes with user's
+    message encoded. The bot supports multiple encodings and several image formats.
+  extra:
+    - label: "Technology stack:"
+      content: Python, python-telegram-bot, Pillow, Tornado
+    - label: "Deployment:"
+      content: The bot is running on Heroku and deployed via the Docker registry
+    - label: "Links:"
+      content: |
+        Bot's Telegram account: <a href="https://t.me/keypunch_bot">@keypunch_bot</a>
+  repo:
+    owner: poletaevvlad
+    name: KeypunchBot
+
+- name: SVG Filter Editor
+  description: |
+    A node-based editor for SVG filters. It supports most filter primitives defined in
+    SVG&nbsp;1.1 Specification.
+  extra:
+    - label: "Technology stack:"
+      content: |
+        The editor is written in JavaScript (ECMAScript 6) and uses React library.
+    - label: "Links:"
+      content: |
+        <a href="https://poletaevvlad.github.io/svg-filter-editor/">See the editor in
+        action online</a>
+  repo:
+    owner: poletaevvlad
+    name: svg-filter-editor
+
+- name: Lark Editor
+  description: |
+    An editor for context-free grammars for Lark (a parsing library for python) that
+    implements syntax highlighting, autosuggestions and error highlighting. The editor
+    also supports parsing of a sample text and viewing it's AST.
+  extra:
+    - label: "Platform:"
+      content: The editor is a GUI application written in Python using GTK+3 for GNOME.
+  repo:
+    owner: poletaevvlad
+    name: larkeditor
+
+- description: |
+    An HTTP-server implemented in Assembly language for x86-64 processor architecture.
+    The server implements the subset of HTTP/1.0 specification (only GET methods are
+    supported along with some other limitations).
+  extra:
+    - label: "Server capabilities:"
+      content: |
+        Serving static files from filesystem, generating directoriy index.
+  repo:
+    owner: poletaevvlad
+    name: http-asm
+
+- description: |
+    A reverse proxy implemented in Rust that enables authentication for the TiddlyWiki
+    personal wiki. It is compatible with TiddlyWiki node.js server.
+  repo:
+    owner: poletaevvlad
+    name: tiddlyproxy

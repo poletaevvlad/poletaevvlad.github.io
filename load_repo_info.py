@@ -71,6 +71,7 @@ def main():
     results = defaultdict(lambda: defaultdict(lambda: {}))
 
     for owner, repo in load_repo_requests(data_dir):
+        print(f"{owner}/{repo}")
         results[owner][repo] = retrieve_repo_info(owner, repo)
 
     with (Path(data_dir) / "repos_info.yaml").open("w") as stream:
