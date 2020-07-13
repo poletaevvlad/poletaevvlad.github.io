@@ -164,3 +164,47 @@ $unknown-lang-color: #CCC
       background-image: url("./images/icons.svg")
       background-repeat: no-repeat
       background-position: 0 -36px
+
+
+@media screen and (max-width: $width + 2 * $margin)
+  .repo_stats
+    flex-wrap: wrap
+    height: auto
+
+  .stats_languages
+    order: 3
+    flex: 1 1 100%
+    padding: 6px 0 7px
+
+  .stats_link
+    height: 1rem
+    white-space: nowrap
+
+  .stats_numeric
+    flex: 0 0
+    white-space: nowrap
+
+  .stats_language_entry
+    transform: translate(0, 3px)
+
+  .stats_languages_details
+    position: static
+    overflow-x: scroll
+    opacity: 1
+    flex: 1 1 100%
+    order: 4
+    transform: none !important
+    line-height: 1rem
+    text-align: left
+    margin: 0 -10px
+
+@media screen and (max-width: 500px)
+  .extra, .extra_row, .extra_label, .extra_content
+    display: block !important
+
+  .extra_row
+    margin-top: 1rem
+
+  .extra_content
+    margin-left: 1rem
+
