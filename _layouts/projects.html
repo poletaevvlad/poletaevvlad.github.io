@@ -19,8 +19,10 @@ layout: base
 </header>
 
 <div id="body">
-  <div class="content">
-    <div class="projects-list">
+  <main class="content">
+    <section class="projects-list">
+      <h2>My Open Source Pet Projects</h2>
+
       {% for project in site.data.projects %}
         <article class="project">
           {% if project.repo %}
@@ -28,13 +30,13 @@ layout: base
           {% else %}
             {% assign repo = null %}
           {% endif %}
-          <h2>
+          <h3>
             {% if project.name %}
               {{ project.name }}
             {% else %}
               {{ repo.name }}
             {% endif %}
-          </h2>
+          </h3>
           {% if project.description %}
             {{ project.description | markdownify }}
           {% else %}
@@ -96,6 +98,6 @@ layout: base
           {% endif %}
         </article>
       {% endfor %}
-    </div>
-  </div>
+    </section>
+  </main>
 </div>
