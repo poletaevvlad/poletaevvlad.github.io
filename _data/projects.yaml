@@ -5,6 +5,16 @@
   extra:
     - label: "Technology stack:"
       content: Python, Lark parser
+    - label: "Language features:"
+      content: |
+        Variables, control flow, user-defined functions, domain-specific 'orient'
+        operator, turning and rotation syntax common in the speedcubing community,
+        support for arbitrary sized cubes. Rubtime library written in Python.
+    - label: "Related project:"
+      content: |
+        <u>CubePlayer</u>: OpenGL-based application for visualizing solving formulas in 3D.
+        <a href="https://github.com/poletaevvlad/CubePlayer">The source is avaliable
+        on GitHub.</a>
   repo:
     owner: poletaevvlad
     name: cubelang
