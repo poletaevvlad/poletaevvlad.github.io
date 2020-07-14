@@ -30,23 +30,35 @@ layout: base
       {% endfor %}
     </section>
 
+    <section>
+      <h2>My Formal Education</h2>
 
-              <div class="stats_languages_details">
-                {% for language in repo.languages %}
-                  <span class="stats_language_text">
-                    {% assign color=site.data.languages[language.language] %}
-                    <span class="stats_language_color"{% if color %} style="background-color: {{ color }}"{% endif %}></span>
-                    {% if language.weight > 0.35 %}
-                      <span itemprop="programmingLanguage">{{ language.language }}</span>
-                    {% else %}
-                      {{ language.language }}
-                    {% endif %}
-                    <span class="stats_language_percentage">
-                      ({{ language.weight | times:100 | round:1 }}%)
-                    </span>
-                  </span>
-                {% endfor %}
-              </div>
+      <div class="large extra">
+        <div class="extra_row">
+          <div class="extra_label">Institution:</div>
+          <div class="extra_content">Donetsk National Technical University, Donetsk, Ukraine</div>
+        </div>
+        <div class="extra_row">
+          <div class="extra_label">Duration:</div>
+          <div class="extra_content">September 2014 &ndash; June 2020 <span class="extra_details">(6 academic years/12 semesters)</span></div>
+        </div>
+        <div class="extra_row">
+          <div class="extra_label">Bachelor's degree:</div>
+          <div class="extra_content">
+            <div>Bachelor's degree in Software Engineering. <span class="extra_details">(8 semesters)</span></div>
+            <div>Thesis topic: <span class="extra_details">“Computer Remote Control Software” (Java, FavaFX, Android, RPC systems); see presentation.</span></div>
+            <div>GPA: <span class="extra_details">XX out of 100</span>.</div>
+          </div>
+        </div>
+        <div class="extra_row">
+          <div class="extra_label">Master's degree:</div>
+          <div class="extra_content">
+            <div>Masters's degree in Software Engineering. <span class="extra_details">(4 semesters)</span></div>
+            <div>Thesis topic: <span class="extra_details">“Research on Content-based Image Retrieval Methods” (Python, OpenCL, CBIR-methods, ORB features); see presentation.</span></div>
+            <div>GPA: <span class="extra_details">XX out of 100</span>.</div>
+          </div>
+        </div>
+      </div>
 
     </section>
   </main>

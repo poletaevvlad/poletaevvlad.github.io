@@ -1,0 +1,37 @@
+.extra
+  font-size: 11px
+  display: table
+  margin: 1rem 0
+
+  &.large
+    font-size: 13px
+
+    .extra_row:not(:last-child)
+      .extra_label, .extra_content
+        padding-bottom: 1rem
+
+  .extra_row
+    display: table-row
+
+  .extra_label
+    display: table-cell
+    padding-right: 15px
+    width: 135px
+
+  .extra_content
+    display: table-cell
+    font-weight: 500
+
+.extra_details
+  font-weight: 400
+
+
+@media screen and (max-width: 500px)
+  .extra, .extra_row, .extra_label, .extra_content
+    display: block !important
+
+  .extra_row
+    margin-top: 1rem
+
+  .extra_content
+    margin-left: 1rem
