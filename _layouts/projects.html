@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div itemscope itemtype="https://schema.org/Person" itemprop="creator" id="self_root">
+<div itemscope itemtype="https://schema.org/Person" id="self_root" itemprop="author">
 
 <header id="header">
   <div class="content">
@@ -34,19 +34,21 @@ layout: base
       <h2>My Formal Education</h2>
 
       <div class="large extra">
-        <div class="extra_row">
+        <div class="extra_row" itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
           <div class="extra_label">Institution:</div>
-          <div class="extra_content">Donetsk National Technical University, Donetsk, Ukraine</div>
+          <div class="extra_content">
+            <span itemprop="name">Donetsk National Technical University</span>,
+            <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">Donetsk</span>, <span itemprop="addressCountry">Ukraine</span></span></div>
         </div>
         <div class="extra_row">
           <div class="extra_label">Duration:</div>
           <div class="extra_content">September 2014 &ndash; June 2020 <span class="extra_details">(6 academic years/12 semesters)</span></div>
         </div>
-        <div class="extra_row">
-          <div class="extra_label">Bachelor's degree:</div>
+        <div class="extra_row" itemscope itemtype="https://schema.org/EducationalOccupationalCredential" itemprop="hasCredential">
+          <div class="extra_label"><span itemprop="educationalLevel">Bachelor</span>'s <span itemprop="credentialCategory">degree</span>:</div>
           <div class="extra_content">
             <div>Bachelor's degree in Software Engineering. <span class="extra_details">(8 semesters)</span></div>
-            <div>Thesis topic: <span class="extra_details">“Computer Remote Control Software” (Java, FavaFX, Android, RPC systems); see presentation.</span></div>
+            <div><span itemprop="description">Thesis topic: <span class="extra_details">“Computer Remote Control Software” (Java, FavaFX, Android, RPC systems)</span></span><span class="extra_details">; see presentation.</span></div>
             <div>GPA: <span class="extra_details">XX out of 100</span>.</div>
           </div>
         </div>
