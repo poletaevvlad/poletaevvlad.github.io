@@ -29,11 +29,13 @@ layout: base
             {% assign repo = null %}
           {% endif %}
           <h3>
-            {% if project.name %}
-              {{ project.name }}
-            {% else %}
-              {{ repo.name }}
-            {% endif %}
+            <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
+              {% if project.name %}
+                {{ project.name }}
+              {% else %}
+                {{ repo.name }}
+              {% endif %}
+            </a>
           </h3>
           {% if project.description %}
             {{ project.description | markdownify }}
