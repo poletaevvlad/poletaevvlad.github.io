@@ -2,7 +2,7 @@
 layout: base
 ---
 
-<div itemscope itemtype="https://schema.org/Person" id="self_root">
+<div itemscope itemtype="https://schema.org/Person" itemprop="creator" id="self_root">
 
 <header id="header">
   <div class="content">
@@ -24,7 +24,7 @@ layout: base
       <h2>My Open Source Pet Projects</h2>
 
       {% for project in site.data.projects %}
-        <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode">
+        <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode" itemref="self_root">
           {% if project.repo %}
             {% assign repo = site.data.repos_info[project.repo.owner][project.repo.name] %}
           {% else %}
