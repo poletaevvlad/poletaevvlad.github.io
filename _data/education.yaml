@@ -15,9 +15,6 @@ degrees:
     topic: Computer Remote Control Software
     keywords: Java, FavaFX, Android, RPC systems
     gpa: XX
-    links:
-      - label: presentation
-        href: /
 
   - type: Master
     duration_semesters: 4
@@ -25,6 +22,3 @@ degrees:
     topic: Research on Content-based Image Retrieval Methods
     keywords: Python, OpenCL, CBIR-methods, ORB features
     gpa: XX
-    links:
-      - label: presentation
-        href: /
