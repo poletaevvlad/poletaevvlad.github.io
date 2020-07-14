@@ -2,6 +2,8 @@
 layout: base
 ---
 
+<div itemscope itemtype="https://schema.org/Person" id="self_root">
+
 <header id="header">
   <div class="content">
     <nav id="header-nav">
@@ -10,7 +12,7 @@ layout: base
       {% endfor %}
     </nav>
 
-    <h1>{{ page.title }}</h1>
+    <h1 itemprop="name"><span itemprop="givenName">{{ page.given_name }}</span> <span itemprop="familyName">{{ page.family_name }}</span></h1>
     <nav id="variants">
     </nav>
   </div>
@@ -22,26 +24,27 @@ layout: base
       <h2>My Open Source Pet Projects</h2>
 
       {% for project in site.data.projects %}
-        <article class="project">
+        <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode">
           {% if project.repo %}
             {% assign repo = site.data.repos_info[project.repo.owner][project.repo.name] %}
           {% else %}
             {% assign repo = null %}
           {% endif %}
+
           <h3>
-            <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}">
-              {% if project.name %}
-                {{ project.name }}
-              {% else %}
-                {{ repo.name }}
-              {% endif %}
+            <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}" itemprop="url">
+              <span itemprop="name">
+                {% if project.name %}{{ project.name }}{% else %}{{ repo.name }}{% endif %}
+              </span>
             </a>
           </h3>
-          {% if project.description %}
-            {{ project.description | markdownify }}
-          {% else %}
-            <p>{{ repo.description }}</p>
-          {% endif %}
+          <div itemprop="description">
+            {% if project.description %}
+              {{ project.description | markdownify }}
+            {% else %}
+              <p>{{ repo.description }}</p>
+            {% endif %}
+          </div>
 
           {% if project.extra %}
             <div class="extra">
@@ -81,7 +84,11 @@ layout: base
                   <span class="stats_language_text">
                     {% assign color=site.data.languages[language.language] %}
                     <span class="stats_language_color"{% if color %} style="background-color: {{ color }}"{% endif %}></span>
-                    {{ language.language }}
+                    {% if language.weight > 0.35 %}
+                      <span itemprop="programmingLanguage">{{ language.language }}</span>
+                    {% else %}
+                      {{ language.language }}
+                    {% endif %}
                     <span class="stats_language_percentage">
                       ({{ language.weight | times:100 | round:1 }}%)
                     </span>
@@ -90,7 +97,7 @@ layout: base
               </div>
 
               <div class="stats_link">
-                <a href={{ repo.url }}>
+                <a href={{ repo.url }} itemprop="codeRepository">
                   /{{ project.repo.owner }}/{{ project.repo.name }}
                 </a>
               </div>
@@ -106,3 +113,5 @@ layout: base
   <div>Repository statistics may be a couple days out of date.</div>
   <div>This webpage is generated using Jekyll from <a href="https://github.com/poletaevvlad/poletaevvlad.github.io">the repository on GitHub</a>.</div>
 </footer>
+
+</div>

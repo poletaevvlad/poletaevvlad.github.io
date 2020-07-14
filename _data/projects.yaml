@@ -4,12 +4,12 @@
     Python porgram.
   extra:
     - label: "Technology stack:"
-      content: Python, Lark parser
+      content: <span itemprop="runtimePlatform">Python</span>, Lark parser
     - label: "Language features:"
       content: |
         Variables, control flow, user-defined functions, domain-specific 'orient'
         operator, turning and rotation syntax common in the speedcubing community,
-        support for arbitrary sized cubes. Rubtime library written in Python.
+        support for arbitrary sized cubes. Runtime library written in Python.
     - label: "Related project:"
       content: |
         <u>CubePlayer</u>: OpenGL-based application for visualizing solving formulas in 3D.
@@ -26,7 +26,9 @@
     - label: "Technology stack:"
       content: Python, python-telegram-bot, Pillow, Tornado
     - label: "Deployment:"
-      content: The bot is running on Heroku and deployed via the Docker registry
+      content: |
+        The bot is running on <span itemprop="runtimePlatform">Heroku</span> and
+        deployed via the Docker registry
     - label: "Links:"
       content: |
         Bot's Telegram account: <a href="https://t.me/keypunch_bot">@keypunch_bot</a>
@@ -57,7 +59,9 @@
     also supports parsing of a sample text and viewing it's AST.
   extra:
     - label: "Platform:"
-      content: The editor is a GUI application written in Python using GTK+3 for GNOME.
+      content: |
+        The editor is a GUI application written in Python using GTK+3 for
+        <span itemprop="runtimePlatform">GNOME</span>.
   repo:
     owner: poletaevvlad
     name: larkeditor
