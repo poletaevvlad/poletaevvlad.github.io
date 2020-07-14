@@ -25,59 +25,11 @@ layout: base
 
       {% for project in site.data.projects %}
         <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode" itemref="self_root">
-          {% if project.repo %}
-            {% assign repo = site.data.repos_info[project.repo.owner][project.repo.name] %}
-          {% else %}
-            {% assign repo = null %}
-          {% endif %}
+          {% include project_description.html %}
+        </article>
+      {% endfor %}
+    </section>
 
-          <h3>
-            <a href="https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}" itemprop="url">
-              <span itemprop="name">
-                {% if project.name %}{{ project.name }}{% else %}{{ repo.name }}{% endif %}
-              </span>
-            </a>
-          </h3>
-          <div itemprop="description">
-            {% if project.description %}
-              {{ project.description | markdownify }}
-            {% else %}
-              <p>{{ repo.description }}</p>
-            {% endif %}
-          </div>
-
-          {% if project.extra %}
-            <div class="extra">
-              {% for entry in project.extra %}
-                <div class="extra_row">
-                  <div class="extra_label">{{ entry.label }}</div>
-                  <div class="extra_content">{{ entry.content }}</div>
-                </div>
-              {% endfor %}
-            </div>
-          {% endif %}
-
-          {% if repo %}
-            <div class="repo_stats">
-              <div class="stats_numeric">
-                <div class="stat_commits_count">
-                  {{ repo.commits_count }}
-                  <div class="stat_description">Commits count</div>
-                </div>
-                {% if repo.stars > 0 %}
-                  <div class="stat_stars_count">
-                    {{ repo.stars }}
-                    <div class="stat_description">Stargazers count</div>
-                  </div>
-                {% endif %}
-              </div>
-
-              <div class="stats_languages">
-                {% for language in repo.languages %}
-                  {% assign color=site.data.languages[language.language] %}
-                  <div class="stats_language_entry" style="width: {{ language.weight | times:100 }}%;{% if color %} background-color: {{ color }}{% endif %}"></div>
-                {% endfor %}
-              </div>
 
               <div class="stats_languages_details">
                 {% for language in repo.languages %}
@@ -96,15 +48,6 @@ layout: base
                 {% endfor %}
               </div>
 
-              <div class="stats_link">
-                <a href={{ repo.url }} itemprop="codeRepository">
-                  /{{ project.repo.owner }}/{{ project.repo.name }}
-                </a>
-              </div>
-            </div>
-          {% endif %}
-        </article>
-      {% endfor %}
     </section>
   </main>
 </div>
