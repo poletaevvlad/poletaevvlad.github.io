@@ -1,0 +1,30 @@
+institution:
+  name: Donetsk National Technical University
+  city:  Donetsk
+  country: Ukraine
+
+duration:
+  start: {year: 2014, month: September}
+  end: {year: 2020, month: June}
+  extra: 6 academic years/12 semesters
+
+degrees:
+  - type: Bachelor
+    duration_semesters: 8
+    area: Software Engineering
+    topic: Computer Remote Control Software
+    keywords: Java, FavaFX, Android, RPC systems
+    gpa: XX
+    links:
+      - label: presentation
+        href: /
+
+  - type: Master
+    duration_semesters: 4
+    area: Software Engineering
+    topic: Research on Content-based Image Retrieval Methods
+    keywords: Python, OpenCL, CBIR-methods, ORB features
+    gpa: XX
+    links:
+      - label: presentation
+        href: /
