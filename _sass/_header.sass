@@ -41,3 +41,22 @@
 
   a
     margin-left: 15px !important
+
+.contacts
+  font-size: 0
+  height: 1rem
+  margin: 0 0 1rem
+
+  li
+    display: inline-block
+    font-size: 11px
+    height: 1rem
+
+    &:not(:first-child)::before
+      content: "·"
+      font-weight: 500
+      margin: 0 10px
+
+  a
+    +link-no-visited()
+    color: $text-color
