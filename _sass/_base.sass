@@ -38,3 +38,23 @@ footer.content
 
   footer.content
     margin: 2rem $margin
+
+
+@mixin link-no-visited()
+  color: $link
+
+  &:hover
+    color: $link-hover
+
+  &:active
+    color: $link-active !important
+
+
+a
+  +link-no-visited
+
+  &:visited
+    color: $link-visited
+
+  &:visited:hover
+    color: $link-visited-hover

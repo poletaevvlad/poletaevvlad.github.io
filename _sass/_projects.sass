@@ -153,6 +153,9 @@ $unknown-lang-color: #CCC
     line-height: 1rem
     display: inline-block
 
+    &:hover
+      color: $link-hover
+
     &::before
       font-size: 0
       content: " "
@@ -164,6 +167,12 @@ $unknown-lang-color: #CCC
       background-image: url("./images/icons.svg")
       background-repeat: no-repeat
       background-position: 0 -36px
+
+    &:hover::before
+      background-position: 0 -54px
+
+    &:active::before
+      background-position: 0 -72px
 
 
 @media screen and (max-width: $width + 2 * $margin)
