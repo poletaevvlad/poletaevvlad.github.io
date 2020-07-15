@@ -60,7 +60,7 @@ layout: base
           <div class="extra_content">
             <div>
               {{ degree.type }}'s degree in {{ degree.area }}.
-              <span class="extra_details">({{ degree.duration_semesters }} semesters)</span>
+              <span class="extra_details">({{ degree.duration_semesters }}&nbsp;semesters)</span>
             </div>
             <div>Thesis topic: <span class="extra_details">“<span itemprop="headline">{{ degree.topic }}</span>” (<span itemprop="keywords">{{ degree.keywords }}</span>){% if degree.links %}; see {% for link in degree.links %}<a href="{{ link.href }}">{{ link.label }}</a>{% if forloop.last != true %}, {% endif %}</a>{% endfor %}{% endif %}.</span></div>
             <div><abbr title="Grade Point Average">GPA</abbr>: <span class="extra_details">{{ degree.gpa }} out of 100</span>.</div>

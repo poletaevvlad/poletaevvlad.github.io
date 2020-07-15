@@ -6,7 +6,7 @@ institution:
 duration:
   start: {year: 2014, month: September}
   end: {year: 2020, month: June}
-  extra: 6 academic years/12 semesters
+  extra: 6&nbsp;academic&nbsp;years/&#8203;12&nbsp;semesters
 
 degrees:
   - type: Bachelor
