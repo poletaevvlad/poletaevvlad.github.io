@@ -3,6 +3,10 @@ import re
 from pathlib import Path
 from collections import defaultdict
 import yaml
+try:
+    from yaml import CLoader as Loader, CDumper as Dumper
+except ImportError:
+    from yaml import Loader, Dumper
 import requests
 
 RE_PAGE_NUMBER = re.compile(r"(?:&|\?)page=(\d+)")
@@ -10,7 +14,7 @@ RE_PAGE_NUMBER = re.compile(r"(?:&|\?)page=(\d+)")
 
 def load_repo_requests(data_dir):
     with (data_dir / "projects.yaml").open() as file:
-        projects = yaml.load(file, yaml.CLoader)
+        projects = yaml.load(file, Loader)
 
     return ((r["repo"]["owner"], r["repo"]["name"]) for r in projects if "repo" in r)
 
@@ -77,7 +81,7 @@ def main():
 
     with (Path(data_dir) / "repos_info.yaml").open("w") as stream:
         serialized = yaml.dump(
-            {k: dict(v) for k, v in results.items()}, stream
+            {k: dict(v) for k, v in results.items()}, stream, Dumper=Dumper
         )
 
 
