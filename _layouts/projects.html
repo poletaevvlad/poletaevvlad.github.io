@@ -15,8 +15,9 @@ layout: base
     <h1 itemprop="name"><span itemprop="givenName">{{ page.given_name }}</span> <span itemprop="familyName">{{ page.family_name }}</span></h1>
 
     <ul class="contacts">
-      <li><a href="mailto:poletaev.vladislav@gmail.com">poletaev.vladislav@gmail.com</a></li>
-      <li><a href="https://github.com/poletaevvlad">GitHub: poletaevvlad</a></li>
+      {% for link in site.contacts %}
+        <li>{{ link.prefix }} <a href="{{ link.url }}">{{ link.label }}</a> {{ link.suffix }}</li>
+      {% endfor %}
     </ul>
   </div>
 </header>

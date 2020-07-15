@@ -14,3 +14,10 @@ navigation:
     label: GitHub
   - url: sourcerer.io/poletaevvlad
     label: Sourcerer
+
+contacts:
+  - url: mailto:poletaev.vladislav@gmail.com
+    label: poletaev.vladislav@gmail.com
+  - url: https://github.com/poletaevvlad
+    label: poletaevvlad
+    prefix: "GitHub:"
