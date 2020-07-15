@@ -42,6 +42,7 @@
   a
     margin-left: 15px !important
 
+
 .contacts
   font-size: 0
   height: 1rem
@@ -60,3 +61,13 @@
   a
     +link-no-visited()
     color: $text-color
+
+  @media screen and (max-width: 500px)
+    height: auto
+
+    li
+      display: block
+      margin-left: 0.1rem
+
+      &::before
+        display: none
