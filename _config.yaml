@@ -12,7 +12,7 @@ sass:
 navigation:
   - url: https://github.com/poletaevvlad
     label: GitHub
-  - url: sourcerer.io/poletaevvlad
+  - url: https://sourcerer.io/poletaevvlad
     label: Sourcerer
 
 contacts:
