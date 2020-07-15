@@ -1,7 +1,7 @@
 - description: |
-    Procedural domain-specific *staticly* and strongly typed programming language
+    Procedural domain-specific statically and strongly typed programming language
     for solving twisting cube puzzles, such as Rubik’s cubes. Compiles into
-    Python porgram.
+    Python program.
   extra:
     - label: "Technology stack:"
       content: <span itemprop="runtimePlatform">Python</span>, Lark parser
@@ -9,18 +9,18 @@
       content: |
         Variables, control flow, user-defined functions, domain-specific 'orient'
         operator, turning and rotation syntax common in the speedcubing community,
-        support for arbitrary sized cubes. Runtime library written in Python.
+        support for arbitrarily sized cubes. Runtime library, written in Python.
     - label: "Related project:"
       content: |
         <u>CubePlayer</u>: OpenGL-based application for visualizing solving formulas in 3D.
-        <a href="https://github.com/poletaevvlad/CubePlayer">The source is avaliable
+        <a href="https://github.com/poletaevvlad/CubePlayer">The source is available
         on GitHub.</a>
   repo:
     owner: poletaevvlad
     name: cubelang
 
 - description: |
-    A Telegram-bot that generates images of punched cards and punched tapes with user's
+    A Telegram-bot that generates images of punched cards and punched tape with a user's
     message encoded. The bot supports multiple encodings and several image formats.
   extra:
     - label: "Technology stack:"
@@ -55,8 +55,8 @@
 - name: Lark Editor
   description: |
     An editor for context-free grammars for Lark (a parsing library for python) that
-    implements syntax highlighting, autosuggestions and error highlighting. The editor
-    also supports parsing of a sample text and viewing it's AST.
+    implements syntax highlighting, autosuggestions, and error highlighting. The editor
+    also supports the parsing of a sample text and viewing it's AST.
   extra:
     - label: "Platform:"
       content: |
@@ -73,7 +73,7 @@
   extra:
     - label: "Server capabilities:"
       content: |
-        Serving static files from filesystem, generating directoriy index.
+        Serving static files from the filesystem, generating directory index.
   repo:
     owner: poletaevvlad
     name: http-asm
