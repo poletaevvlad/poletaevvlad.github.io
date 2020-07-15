@@ -1,0 +1,32 @@
+name: Build
+on:
+  push:
+    branches: [source]
+  schedule:
+    - cron: "0 0 */2 * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.7"
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install requests pyyaml
+
+    - name: Loading repository statistics
+      run:
+        python ./load_repo_info.py
+
+    - name: Building and deploying Jekyll site
+      uses: fabacab/jekyll-builder-for-github-pages-action@v1
+      with:
+        gh_pages_publishing_source: master
+        secret_gh_pages_api_token: ${{ secrets.GH_PAGES_API_TOKEN }}
