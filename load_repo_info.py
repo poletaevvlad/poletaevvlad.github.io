@@ -9,9 +9,10 @@ RE_PAGE_NUMBER = re.compile(r"(?:&|\?)page=(\d+)")
 
 
 def load_repo_requests(data_dir):
-    with (data_dir / "repos.yaml").open() as file:
-        repos = yaml.load(file, yaml.CLoader)
-    return ((r["owner"], r["repo"]) for r in repos)
+    with (data_dir / "projects.yaml").open() as file:
+        projects = yaml.load(file, yaml.CLoader)
+
+    return ((r["repo"]["owner"], r["repo"]["name"]) for r in projects if "repo" in r)
 
 
 def retrieve_languages(owner, repo):
