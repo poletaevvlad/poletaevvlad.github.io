@@ -5,6 +5,11 @@
         DiceRobot is a dice rolling app with sheet management capabilities. It will take
         care of dice, modifiers, and tedious arithmetic to make user's experience at the
         table as enjoyable as possible.
+      icon:
+        "1x": '/assets/images/dicerobot.png'
+        "2x": '/assets/images/dicerobot-2x.png'
+        "3x": '/assets/images/dicerobot-3x.png'
+        "4x": '/assets/images/dicerobot-4x.png'
       extra:
         - label: "Platform:"
           content: Android 4.1 or newer

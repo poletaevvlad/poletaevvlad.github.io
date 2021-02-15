@@ -6,6 +6,9 @@
 
 <h3>
   <a href="{% if project.url %}{{ project.url }}{% else %}https://github.com/{{ project.repo.owner }}/{{ project.repo.name }}{% endif %}" itemprop="url">
+    {% if project.icon %}
+      <img class="icon" alt="{% if project.name %}{{ project.name }}{% else %}{{ repo.name }}{% endif %}" srcset="{% for scale in project.icon %}{{ scale[1] }} {{ scale[0] }}{% if forloop.last == false %}, {% endif %}{% endfor %}" />
+    {% endif %}
     <span itemprop="name">
       {% if project.name %}{{ project.name }}{% else %}{{ repo.name }}{% endif %}
     </span>
