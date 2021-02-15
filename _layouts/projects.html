@@ -25,12 +25,13 @@ layout: base
 <div id="body">
   <main class="content">
     <section class="projects-list">
-      <h2>My Open Source Pet Projects</h2>
-
-      {% for project in site.data.projects %}
-        <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode">
-          {% include project_description.html %}
-        </article>
+      {% for section in site.data.projects %}
+        <h2>{{ section.title }}</h2>
+        {% for project in section.projects %}
+          <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode">
+            {% include project_description.html %}
+          </article>
+        {% endfor %}
       {% endfor %}
     </section>
 

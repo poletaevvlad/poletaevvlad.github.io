@@ -1,86 +1,110 @@
-- description: |
-    Procedural domain-specific statically and strongly typed programming language
-    for solving twisting cube puzzles, such as Rubik’s cubes. Compiles into
-    Python program.
-  extra:
-    - label: "Technology stack:"
-      content: <span itemprop="runtimePlatform">Python</span>, Lark parser
-    - label: "Language features:"
-      content: |
-        Variables, control flow, user-defined functions, domain-specific 'orient'
-        operator, turning and rotation syntax common in the speedcubing community,
-        support for arbitrarily sized cubes. Runtime library, written in Python.
-    - label: "Related project:"
-      content: |
-        <u>CubePlayer</u>: OpenGL-based application for visualizing solving formulas in 3D.
-        <a href="https://github.com/poletaevvlad/CubePlayer">The source is available
-        on GitHub.</a>
-  repo:
-    owner: poletaevvlad
-    name: cubelang
+- title: My Projects
+  projects:
+    - name: DiceRobot
+      description: |
+        DiceRobot is a dice rolling app with sheet management capabilities. It will take
+        care of dice, modifiers, and tedious arithmetic to make user's experience at the
+        table as enjoyable as possible.
+      extra:
+        - label: "Platform:"
+          content: Android 4.1 or newer
+        - label: "Features:"
+          content: |
+            <u>Rolling dice</u>: rolling arbitrary-sided dice, selecting highest and lowest
+            dice results, performing arithmetics. <u>Sheet management</u>: creating
+            constants and saved rolls for easier access, organized into separate sheets.
+            <u>Expression analysis</u>: computing probability of any dice roll outcome.
+            <u>History</u>: every roll a user makes is saved for future access.
+        - label: "Technology stack:"
+          content: |
+            Flutter; Google services: AdMob, Firebase Analytics, Play Billing
+      url: https://dicerobot.pp.ua
 
-- description: |
-    A Telegram-bot that generates images of punched cards and punched tape with a user's
-    message encoded. The bot supports multiple encodings and several image formats.
-  extra:
-    - label: "Technology stack:"
-      content: Python, python-telegram-bot, Pillow, Tornado
-    - label: "Deployment:"
-      content: |
-        The bot is running on <span itemprop="runtimePlatform">Heroku</span> and
-        deployed via the Docker registry
-    - label: "Links:"
-      content: |
-        Bot's Telegram account: <a href="https://t.me/keypunch_bot">@keypunch_bot</a>
-  repo:
-    owner: poletaevvlad
-    name: KeypunchBot
+- title: My Open Source Pet Projects
+  projects:
+    - description: |
+        Procedural domain-specific statically and strongly typed programming language
+        for solving twisting cube puzzles, such as Rubik’s cubes. Compiles into
+        Python program.
+      extra:
+        - label: "Technology stack:"
+          content: <span itemprop="runtimePlatform">Python</span>, Lark parser
+        - label: "Language features:"
+          content: |
+            Variables, control flow, user-defined functions, domain-specific 'orient'
+            operator, turning and rotation syntax common in the speedcubing community,
+            support for arbitrarily sized cubes. Runtime library, written in Python.
+        - label: "Related project:"
+          content: |
+            <u>CubePlayer</u>: OpenGL-based application for visualizing solving formulas in 3D.
+            <a href="https://github.com/poletaevvlad/CubePlayer">The source is available
+            on GitHub.</a>
+      repo:
+        owner: poletaevvlad
+        name: cubelang
 
-- name: SVG Filter Editor
-  description: |
-    A node-based editor for SVG filters. It supports most filter primitives defined in
-    SVG&nbsp;1.1 Specification.
-  extra:
-    - label: "Technology stack:"
-      content: |
-        The editor is written in JavaScript (ECMAScript 6) and uses React library.
-    - label: "Links:"
-      content: |
-        <a href="https://poletaevvlad.github.io/svg-filter-editor/">See the editor in
-        action online</a>
-  repo:
-    owner: poletaevvlad
-    name: svg-filter-editor
+    - description: |
+        A Telegram-bot that generates images of punched cards and punched tape with a user's
+        message encoded. The bot supports multiple encodings and several image formats.
+      extra:
+        - label: "Technology stack:"
+          content: Python, python-telegram-bot, Pillow, Tornado
+        - label: "Deployment:"
+          content: |
+            The bot is running on <span itemprop="runtimePlatform">Heroku</span> and
+            deployed via the Docker registry
+        - label: "Links:"
+          content: |
+            Bot's Telegram account: <a href="https://t.me/keypunch_bot">@keypunch_bot</a>
+      repo:
+        owner: poletaevvlad
+        name: KeypunchBot
 
-- name: Lark Editor
-  description: |
-    An editor for context-free grammars for Lark (a parsing library for python) that
-    implements syntax highlighting, autosuggestions, and error highlighting. The editor
-    also supports the parsing of a sample text and viewing it's AST.
-  extra:
-    - label: "Platform:"
-      content: |
-        The editor is a GUI application written in Python using GTK+3 for
-        <span itemprop="runtimePlatform">GNOME</span>.
-  repo:
-    owner: poletaevvlad
-    name: larkeditor
+    - name: SVG Filter Editor
+      description: |
+        A node-based editor for SVG filters. It supports most filter primitives defined in
+        SVG&nbsp;1.1 Specification.
+      extra:
+        - label: "Technology stack:"
+          content: |
+            The editor is written in JavaScript (ECMAScript 6) and uses React library.
+        - label: "Links:"
+          content: |
+            <a href="https://poletaevvlad.github.io/svg-filter-editor/">See the editor in
+            action online</a>
+      repo:
+        owner: poletaevvlad
+        name: svg-filter-editor
 
-- description: |
-    An HTTP-server implemented in Assembly language for x86-64 processor architecture.
-    The server implements the subset of HTTP/1.0 specification (only GET methods are
-    supported along with some other limitations).
-  extra:
-    - label: "Server capabilities:"
-      content: |
-        Serving static files from the filesystem, generating directory index.
-  repo:
-    owner: poletaevvlad
-    name: http-asm
+    - name: Lark Editor
+      description: |
+        An editor for context-free grammars for Lark (a parsing library for python) that
+        implements syntax highlighting, autosuggestions, and error highlighting. The editor
+        also supports the parsing of a sample text and viewing it's AST.
+      extra:
+        - label: "Platform:"
+          content: |
+            The editor is a GUI application written in Python using GTK+3 for
+            <span itemprop="runtimePlatform">GNOME</span>.
+      repo:
+        owner: poletaevvlad
+        name: larkeditor
 
-- description: |
-    A reverse proxy implemented in Rust that enables authentication for the TiddlyWiki
-    personal wiki. It is compatible with TiddlyWiki node.js server.
-  repo:
-    owner: poletaevvlad
-    name: tiddlyproxy
+    - description: |
+        An HTTP-server implemented in Assembly language for x86-64 processor architecture.
+        The server implements the subset of HTTP/1.0 specification (only GET methods are
+        supported along with some other limitations).
+      extra:
+        - label: "Server capabilities:"
+          content: |
+            Serving static files from the filesystem, generating directory index.
+      repo:
+        owner: poletaevvlad
+        name: http-asm
+
+    - description: |
+        A reverse proxy implemented in Rust that enables authentication for the TiddlyWiki
+        personal wiki. It is compatible with TiddlyWiki node.js server.
+      repo:
+        owner: poletaevvlad
+        name: tiddlyproxy
