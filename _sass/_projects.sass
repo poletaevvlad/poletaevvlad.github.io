@@ -22,13 +22,18 @@
   &:last-child
     border-bottom-color: transparent
 
-.repo_stats
+.repo_stats, .links_list
   margin: 1rem 0 2rem
-  font-size: 0
   height: 1rem
+
+.repo_stats
+  font-size: 0
   display: flex
   align-items: center
   position: relative
+
+.links_list
+  text-align: right
 
 .stats_numeric
   flex: 0 0 150px
@@ -199,3 +204,47 @@ $unknown-lang-color: #CCC
     z-index: 2
     background-color: $bg-color
     padding-right: 5px
+
+a.links_list_link
+  text-decoration: none
+  color: $text-color
+  font-size: 12px
+  position: relative
+  padding-left: 24px
+  line-height: 1rem
+  display: inline-block
+  margin-left: 16px
+
+  &:hover
+    color: $link-hover
+
+  &::before
+    font-size: 0
+    content: " "
+    position: absolute
+    width: 18px
+    height: 18px
+    left: 0
+    top: 0
+    background-image: url("./images/icons.svg")
+    background-repeat: no-repeat
+
+  &.icon_google_play
+    &::before
+      background-position: -18px -36px
+
+    &:hover::before
+      background-position: -18px -54px
+
+    &:active::before
+      background-position: -18px -72px
+
+  &.icon_website
+    &::before
+      background-position: -36px -36px
+
+    &:hover::before
+      background-position: -36px -54px
+
+    &:active::before
+      background-position: -36px -72px

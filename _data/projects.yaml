@@ -19,6 +19,14 @@
           content: |
             Flutter; Google services: AdMob, Firebase Analytics, Play Billing
       url: https://dicerobot.pp.ua
+      links:
+        - icon: google_play
+          label: Google Play
+          url: https://play.google.com/store/apps/details?id=io.github.poletaevvlad.diceroller
+        - icon: website
+          label: Website
+          url: https://dicerobot.pp.ua
+
 
 - title: My Open Source Pet Projects
   projects:

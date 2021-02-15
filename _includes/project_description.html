@@ -30,6 +30,14 @@
   </div>
 {% endif %}
 
+{% if project.links %}
+  <nav class="links_list">
+    {% for link in project.links %}
+      <a class="links_list_link icon_{{ link.icon }}" href="{{ link.url }}">{{ link.label }}</a>
+    {% endfor %}
+  </nav>
+{% endif %}
+
 {% if repo %}
   <div class="repo_stats">
     <div class="stats_numeric">
