@@ -12,8 +12,6 @@ sass:
 navigation:
   - url: https://github.com/poletaevvlad
     label: GitHub
-  - url: https://sourcerer.io/poletaevvlad
-    label: Sourcerer
 
 contacts:
   - url: mailto:poletaev.vladislav@gmail.com
