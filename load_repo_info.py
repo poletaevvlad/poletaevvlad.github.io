@@ -1,4 +1,5 @@
 #! /bin/env python3
+import os
 import re
 from pathlib import Path
 from collections import defaultdict
@@ -16,12 +17,24 @@ def load_repo_requests(data_dir):
     with (data_dir / "projects.yaml").open() as file:
         projects = yaml.load(file, Loader)
 
-    return ((r["repo"]["owner"], r["repo"]["name"]) for r in projects if "repo" in r)
+    return (
+        (project["repo"]["owner"], project["repo"]["name"])
+        for section in projects
+        for project in section["projects"]
+        if "repo" in project
+    )
+
+
+def make_request(url):
+    headers = {}
+    if "GITHUB_OAUTH_TOKEN" in os.environ:
+        headers["Authorization"] = "token " + os.environ["GITHUB_OAUTH_TOKEN"]
+    return requests.get(url, headers=headers)
 
 
 def retrieve_languages(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}/languages"
-    response = requests.get(url)
+    response = make_request(url)
     if response.status_code != 200:
         content = response.content.decode("utf-8")
         raise RuntimeError("Cannot load languages: " + content)
@@ -36,7 +49,7 @@ def retrieve_languages(owner, repo):
 
 def retrieve_commits_count(owner, repo):
     url = f"https://api.github.com/repos/{owner}/{repo}/commits?per_page=1"
-    response = requests.get(url)
+    response = make_request(url)
     if response.status_code != 200:
         content = response.content.decode("utf-8")
         raise RuntimeError("Cannot load commits: " + content)
@@ -55,7 +68,7 @@ def retrieve_commits_count(owner, repo):
 
 
 def retrieve_repo_info(owner, repo):
-    response = requests.get(f"https://api.github.com/repos/{owner}/{repo}")
+    response = make_request(f"https://api.github.com/repos/{owner}/{repo}")
     if response.status_code != 200:
         content = response.content.decode("utf-8")
         raise RuntimeError("Repository does not exist: " + content)
