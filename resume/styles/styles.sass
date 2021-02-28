@@ -1,2 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
+
+$page-margin-top: 1cm
+$page-margin-right: 1cm
+$page-margin-bottom: 1cm
+$page-margin-left: 1cm
+
+$sidebar-width: 7cm
+$sidebar-spacing: 1cm
+
+$accent-color: #87a96b
+$accent-dark-color: #718f59
+
 @page
   size: A4
+  margin: 0
+
+body
+  font-family: "Fira Sans", sans-serif
+  font-size: 9pt
+  font-weight: 300
+  line-height: 1.4em
+  padding: 0
+  margin: 0
+  hyphens: auto
+
+.header
+  background: $accent-color
+  color: white
+  font-weight: 300
+  font-size: 24pt
+  line-height: 1cm
+  padding:
+    top: $page-margin-top
+    bottom: 0.5cm
+    left: $page-margin-left
+    right: $page-margin-right
+
+.sidebar, .main
+  padding-top: 0.5cm
+
+.sidebar
+  background: #eee
+  position: absolute
+  top: $page-margin-top + 1.5cm
+  left: 0
+  bottom: 0
+  width: $sidebar-width
+  padding:
+    left: $page-margin-left
+    right: $sidebar-spacing / 2
+
+.main
+  margin:
+    left: $page-margin-left + $sidebar-width + $sidebar-spacing
+    right: $page-margin-right
+
+h2
+  margin: 0
+  padding: 0
+  font-size: 10pt
+  text-transform: uppercase
+  font-weight: 400
+  color: $accent-dark-color
+  margin-bottom: 2mm
+
+  &::after
+    content: ""
+    display: block
+    background-color: $accent-color
+    width: 1cm
+    height: 0.5mm
+    margin-top: 0.5mm
+
+.education
+  margin-bottom: 2mm
+
+  .institution
+    font-style: italic
+    font-size: 8pt
+    line-height: 1.4em
+
+section
+  h4
+    font-weight: 400
+    padding: 0
+    margin: 0
+    margin-bottom: 0.5mm
+
+    .period
+      float: right
+      opacity: 0.6
+
+  p
+    margin: 0
+    padding: 0
+    margin-left: 2mm
+    text-indent: -2mm
+
+.project
+  margin-bottom: 3mm
+  padding-bottom: 3mm
+  border-bottom: 0.4mm solid #eee
+
+  &::last-child
+    margin-bottom: 0
+    padding-bottom: 0
+    border-bottom-style: none !important
+
+  p
+    margin-left: 4mm
+    text-indent: -1mm
+
+  nav
+    text-align: right
+    font-style: italic
+    font-weight: 400
+
+    a
+      color: $accent-dark-color
+      display: inline-block
+      margin-left: 5mm
+
+p.primary
+  font-size: 9pt
+  margin-bottom: 3mm

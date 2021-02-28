@@ -3,5 +3,61 @@ html
   head
     title Vlad Poletaev
     meta(charset="utf-8")
+    link(rel="stylesheet" href="styles.css")
   body
-    | Vlad Poletaev
+    header.header Владислав Полетаев
+
+    aside.sidebar
+      section
+        h2 Образование
+        section.education
+          h4.name
+            .period 2018&ndash;2020
+            | Магистратура
+          .institution Донецкий национальный технический университет, г. Донецк, Украина.
+          p Специальность 09.04.04#[br]«Программная инженерия»
+          p Cредний бал: 96,69/100
+        section.education
+          h4.name
+            .period 2014&ndash;2018
+            | Бакалавриат
+          .institution Донецкий национальный технический университет, г. Донецк, Украина.
+          p Специальность 09.03.04#[br]«Инженерия программного обеспечения»
+          p Средний бал: 97,52/100
+
+    main.main
+      section
+        h2 Профессиональный опыт
+
+        section.project
+          h4
+            .period 2014&ndash;н. в.
+            | Разработка и поддержка: Кулинарный блог «Домашняя кухня»
+          p Django-приложение, по которому генерируется статический сайт, развёртываемый на AWS S3. Поиск по сайту реализован на AWS&nbsp;Lambda&nbsp;+ Whoosh.
+          p Android-приложение, написанное на Flutter.
+          nav.links
+            a(href="https://play.google.com/store/apps/details?id=ua.pp.homecooking.android.app") Google Play
+            a(href="https://homecooking.pp.ua/") homecooking.pp.ua
+
+      section
+        h2 Личные проекты
+
+        p.primary Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код которых доступен на GitHub.
+
+        section.project
+          h4
+            .period 2014&ndash;н. в.
+            | Разработка и поддержка: Кулинарный блог «Домашняя кухня»
+          p Django-приложение, по которому генерируется статический сайт, развёртываемый на AWS S3. Поиск по сайту реализован на AWS&nbsp;Lambda&nbsp;+ Whoosh.
+          p Android-приложение, написанное на Flutter.
+          nav.links
+            a(href="https://play.google.com/store/apps/details?id=ua.pp.homecooking.android.app") Google Play
+            a(href="https://homecooking.pp.ua/") homecooking.pp.ua
+
+        section.project
+          h4
+            .period 2019
+            | CubeLang
+          p Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений головоломок, таких как Кубики Рубика. #[em (Python, Lark, pytest)]
+          nav.links
+            a(href="GitHub") GH/poletaevvlad/cubelang
