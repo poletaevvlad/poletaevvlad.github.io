@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap')
 
-$page-margin-top: 1cm
+$page-margin-top: 7mm
 $page-margin-right: 1cm
-$page-margin-bottom: 1cm
 $page-margin-left: 1cm
 
 $sidebar-width: 7cm
@@ -10,6 +9,7 @@ $sidebar-spacing: 1cm
 
 $accent-color: #87a96b
 $accent-dark-color: darken($accent-color, 5%)
+$header-height: 40mm
 
 @page
   size: A4
@@ -27,28 +27,38 @@ body
 .header
   background: $accent-color
   color: white
-  font-weight: 300
-  font-size: 24pt
-  line-height: 1cm
-  padding:
-    top: $page-margin-top
-    bottom: 0.5cm
-    left: $page-margin-left
-    right: $page-margin-right
+  margin-top: $page-margin-top
+  height: $header-height
+  box-sizing: border-box
+  position: relative
 
-.sidebar, .main
-  padding-top: 0.5cm
+  .content
+    position: absolute
+    left: $page-margin-left
+    bottom: 0.7cm
+
+  .title
+    font-weight: 300
+    font-size: 24pt
+    line-height: 1.4em
+
+  .subtitle
+    font-weight: 600
+    font-size: 16pt
+    line-height: 1.2em
 
 .sidebar
   background: #f9f9f9
   position: absolute
-  top: $page-margin-top + 1.5cm
+  top: 0
   left: 0
   bottom: 0
   width: $sidebar-width
   padding:
+    top: $page-margin-top + $header-height + 0.7cm
     left: $page-margin-left
     right: $sidebar-spacing / 2
+  z-index: -1
 
   h2
     margin-bottom: 3mm
@@ -57,6 +67,7 @@ body
     margin-bottom: 4mm
 
 .main
+  padding-top: 0.7cm
   margin:
     left: $page-margin-left + $sidebar-width + $sidebar-spacing
     right: $page-margin-right
