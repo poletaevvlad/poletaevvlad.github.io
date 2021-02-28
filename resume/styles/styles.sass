@@ -94,16 +94,20 @@ section
   p
     margin: 0
     padding: 0
-    margin-left: 2mm
+    padding-left: 2mm
     text-indent: -2mm
 
-.project
+.with-divider, .project
   margin-bottom: 3mm
   padding-bottom: 3mm
-  border-bottom: 0.4mm solid #ddd
+  border-bottom: 0.4mm solid #e5e5e5
+
+.project
+  &.no-divider
+    border-bottom-style: none
 
   p
-    margin-left: 4mm
+    padding-left: 3mm
     text-indent: -1mm
 
   nav
@@ -132,4 +136,3 @@ section
 
 p.primary
   font-size: 9pt
-  margin-bottom: 3mm

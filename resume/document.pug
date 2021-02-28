@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="ru")
   head
     title Vlad Poletaev
     meta(charset="utf-8")
@@ -29,7 +29,7 @@ html
       section
         h2 Профессиональный опыт
 
-        section.project
+        section.project.no-divider
           h4
             .period 2014&ndash;н. в.
             | Разработка и поддержка: Кулинарный блог «Домашняя кухня»
@@ -42,13 +42,13 @@ html
       section
         h2 Личные проекты
 
-        p.primary Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код которых доступен на GitHub.
+        p.primary.with-divider Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код большинства из которых доступен на GitHub.
 
         section.project
           h4
             .period 2019
             | CubeLang
-          p Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений головоломок, таких как Кубики Рубика. #[em (Python, Lark, pytest)]
+          p Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений вращательных головоломок, таких как Кубики Рубика. #[em (Python, Lark, pytest)]
           nav.links
             a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/cubelang")
               span.text poletaevvlad/cubelang
@@ -57,7 +57,7 @@ html
           h4
             .period 2018, 2020
             | KeypunchBot
-          p Бот для Telegram, генерирующий изображения перфокарт, на которых закодированы пользова-тельские сообщения. #[em (Python, Telegram Bot API, MongoDB, Heroku, Docker)]
+          p Бот для Telegram, генерирующий изображения перфокарт, на которых закодированы пользовательские сообщения. #[em (Python, Telegram Bot API, MongoDB, Heroku, Docker)]
           nav.links
             a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/KeypunchBot")
               span.text poletaevvlad/KeypunchBot
@@ -80,11 +80,11 @@ html
             a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/anime-list-popup")
               span.text poletaevvlad/anime-list-popup
 
-        section.project
+        section.project.no-divider
           h4
             .period 2018
             | http-asm
-          p Сервер, написанный на ассемблере (x86_64, GNU/Linux) без зависимостей от сторонних библио-тек (включая libc), реализующий подмножество HTTP 1.0, показ содержимого каталогов.
+          p Сервер, написанный на ассемблере (x86_64, GNU/Linux) без зависимостей от сторонних библиотек (включая libc), реализующий подмножество HTTP 1.0, показ содержимого каталогов.
           nav.links
             a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/http-asm")
               span.text poletaevvlad/http-asm
