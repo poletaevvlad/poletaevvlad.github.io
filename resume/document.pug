@@ -8,17 +8,27 @@ html(lang="ru")
     header.header Владислав Полетаев
 
     aside.sidebar
-      section
+      section.skills
         h2 Навыки
-        p Back-end: Python (Django, Flask), AWS (S3, Lambda), Heroku.
-        p Базы данных: MongoDB, MySQL, PostgreSQL, Sqlite.
-        p Front-end: Javascript/Typescript (React), Flutter, Qt, Java/Kotlin (Android, JavaFX), OpenGL.
-        p Инструменты программной инженерии: Git, Docker, Linux.
-        p Языки: русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).
+        .entry
+          .label Back-end
+          .value Python (Django, Flask), AWS (S3, Lambda), Heroku.
+        .entry
+          .label Базы данных
+          .value MongoDB, MySQL, PostgreSQL, Sqlite.
+        .entry
+          .label Front-end
+          .value Javascript/Typescript (React), Flutter, Qt, Java/Kotlin (Android, JavaFX), OpenGL.
+        .entry
+          .label Инструменты программной инженерии
+          .value Git, Docker, Linux.
+        .entry
+          .label Языки
+          .value русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).
 
       section
         h2 Контактная информация
-        .contact.icon-email
+        .contact.icon-mail
           .label E-Mail
           a.value(href="mailto:poletaev.vladislav@gmail.com") poletaev.vladislav@gmail.com
         .contact.icon-telegram

@@ -50,6 +50,9 @@ body
     left: $page-margin-left
     right: $sidebar-spacing / 2
 
+  h2
+    margin-bottom: 3mm
+
   >section
     margin-bottom: 4mm
 
@@ -76,7 +79,11 @@ h2
     margin-top: 0.5mm
 
 .education
-  margin-bottom: 2mm
+  margin-bottom: 3mm
+  padding-left: 1.5mm
+
+  h4
+    margin-left: -1.5mm
 
   .institution
     font-style: italic
@@ -132,7 +139,7 @@ section
         background-position: 0 1pt
 
         &.icon-github
-          background-image: url("icons/github.svg")
+          background-image: url("icons/github-link.svg")
 
         .text
           text-decoration: underline
@@ -143,6 +150,19 @@ p.primary
 .contact
   margin-bottom: 3mm
   padding-left: 1mm
+  background-repeat: no-repeat
+  background-position: 1mm center
+  background-size: 12pt 12pt
+  padding-left: 20pt
+
+  &.icon-telegram
+    background-image: url(icons/telegram.svg)
+
+  &.icon-mail
+    background-image: url(icons/mail.svg)
+
+  &.icon-github
+    background-image: url(icons/github.svg)
 
   .label
     font-size: 8pt
@@ -153,3 +173,15 @@ p.primary
   .value
     text-decoration: none
     color: black
+
+.skills
+  .entry
+    margin-bottom: 1mm
+
+  .label
+    display: block
+    font-weight: 400
+    opacity: 0.8
+
+  .value
+    margin-left: 1.5mm
