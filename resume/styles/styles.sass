@@ -9,7 +9,7 @@ $sidebar-width: 7cm
 $sidebar-spacing: 1cm
 
 $accent-color: #87a96b
-$accent-dark-color: #718f59
+$accent-dark-color: darken($accent-color, 5%)
 
 @page
   size: A4
@@ -100,12 +100,7 @@ section
 .project
   margin-bottom: 3mm
   padding-bottom: 3mm
-  border-bottom: 0.4mm solid #eee
-
-  &::last-child
-    margin-bottom: 0
-    padding-bottom: 0
-    border-bottom-style: none !important
+  border-bottom: 0.4mm solid #ddd
 
   p
     margin-left: 4mm
@@ -115,11 +110,25 @@ section
     text-align: right
     font-style: italic
     font-weight: 400
+    margin-top: 1mm
 
     a
       color: $accent-dark-color
       display: inline-block
       margin-left: 5mm
+
+      &.with-icon
+        text-decoration: none
+        padding-left: 13pt
+        background-size: 11pt 11pt
+        background-repeat: no-repeat
+        background-position: 0 1pt
+
+        &.icon-github
+          background-image: url("icons/github.svg")
+
+        .text
+          text-decoration: underline
 
 p.primary
   font-size: 9pt
