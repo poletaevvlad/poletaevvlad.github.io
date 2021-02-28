@@ -7,7 +7,7 @@ document.html: document.pug
 styles.css: $(wildcard styles/*.sass)
 	./node_modules/.bin/sass styles/styles.sass:styles.css
 
-%PHONY: watch
+%PHONY: watch clean
 
 watch:
 	while true; do \
@@ -15,3 +15,5 @@ watch:
 		make;\
 	done
 
+clean:
+	rm document.html document.pdf styles.css styles.css.map
