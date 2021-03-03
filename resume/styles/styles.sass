@@ -155,13 +155,12 @@ section
       color: $accent-dark-color
       display: inline-block
       margin-left: 5mm
+      line-height: 15pt
+      vertical-align: middle
 
-      &.with-icon
-        text-decoration: none
-        padding-left: 13pt
+      &.with-icon, &.only-icon
         background-size: 11pt 11pt
         background-repeat: no-repeat
-        background-position: 0 1pt
 
         &.icon-github
           background-image: url("icons/github-link.svg")
@@ -169,8 +168,24 @@ section
         &.icon-google-play
           background-image: url("icons/google-play-link.svg")
 
+        &.icon-firefox
+          background-image: url("icons/firefox-link.svg")
+
+        &.icon-chrome
+          background-image: url("icons/chrome-link.svg")
+
+      &.with-icon
+        text-decoration: none
+        padding-left: 13pt
+        background-position: 0 2pt
+
         .text
           text-decoration: underline
+
+      &.only-icon
+        width: 11pt
+        height: 15pt
+        background-position: center
 
 p.primary
   font-size: 9pt
