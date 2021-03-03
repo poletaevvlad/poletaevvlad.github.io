@@ -5,134 +5,199 @@ html(lang="ru")
     meta(charset="utf-8")
     link(rel="stylesheet" href="styles.css")
   body
-    .above-header
-      | Актуальная версия этого резюме доступна на #[a(href="poletaevvlad.github.com/resume.pdf") poletaevvlad.github.com/resume.pdf]
 
-    header.header
-      .content
-        .title Владислав Полетаев
-        .subtitle Python developer
+    for lang in ["ru", "en"]
+      mixin tr(rus, eng)
+        case lang
+          when "ru": != rus
+          when "en": != eng
 
-    aside.sidebar
-      section.skills
-        h2 Навыки
-        .entry
-          .label Back-end
-          .value Python (Django, Flask), AWS (S3, Lambda), RabbitMQ, OpenCL.
-        .entry
-          .label Базы данных
-          .value MongoDB, MySQL, PostgreSQL, SQLite.
-        .entry
-          .label Front-end
-          .value Javascript/Typescript (React), Flutter, Qt, Java&nbsp;(Android, JavaFX).
-        .entry
-          .label Инструменты программной инженерии
-          .value Git, Docker, docker-compose, Linux.
-        .entry
-          .label Языки
-          .value русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).
+      .page(lang=lang)
+        .above-header
+          +tr(
+            "Актуальная версия этого резюме доступна на ", 
+            "The current version of this resume is available at "
+          )
+          a(href="poletaevvlad.github.com/resume.pdf") poletaevvlad.github.com/resume.pdf
 
-      section
-        h2 Контактная информация
-        .contact.icon-mail
-          .label E-Mail
-          a.value(href="mailto:poletaev.vladislav@gmail.com") poletaev.vladislav@gmail.com
-        .contact.icon-telegram
-          .label Telegram
-          .value @poletaevvlad
-        .contact.icon-github
-          .label GitHub
-          a.value(href="https://github.com/poletaevvlad") github.com/poletaevvlad
-        hr.contact-divider
-        .contact.icon-map
-          .label Место проживания
-          .value г. Донецк, Украина
+        header.header
+          .content
+            .title
+              +tr("Владислав Полетаев", "Vladislav Poletaev")
+            .subtitle Python developer
 
-      section
-        h2 Образование
-        section.education
-          h4.name
-            .period 2018&ndash;2020
-            | Магистратура
-          .institution Донецкий национальный технический университет, г. Донецк, Украина.
-          p Специальность 09.04.04#[br]«Программная инженерия»
-          p Cредний бал: 96,69/100
-        section.education
-          h4.name
-            .period 2014&ndash;2018
-            | Бакалавриат
-          .institution Донецкий национальный технический университет, г. Донецк, Украина.
-          p Специальность 09.03.04#[br]«Инженерия программного обеспечения»
-          p Средний бал: 97,52/100
+        aside.sidebar
+          section.skills
+            h2: +tr("Навыки", "Skills")
+            .entry
+              .label Back-end
+              .value Python (Django, Flask), AWS (S3, Lambda), RabbitMQ, OpenCL.
+            .entry
+              .label: +tr("Базы данных", "DBMS")
+              .value MongoDB, MySQL, PostgreSQL, SQLite.
+            .entry
+              .label Front-end
+              .value Javascript/Typescript (React), Flutter, Qt, Java&nbsp;(Android, JavaFX).
+            .entry
+              .label: +tr("Инструменты программной инженерии", "Software engeneering tools")
+              .value Git, Docker, docker-compose, Linux.
+            .entry
+              .label: +tr("Языки", "Languages")
+              .value 
+                +tr(
+                  "русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).",
+                  "Russian, Ukrainian (native), English (intermediate)."
+                )
 
-    main.main
-      p.summary Люблю решать сложные задачи, предпочитая работать над back-end. Желаю присоединиться к команде разработчиков в которой я мог бы совершенствовать свои профессиональные навыки и личные качества работая над решениями практических задач.
+          section
+            h2: +tr("Контактная информация", "Contacts")
+            .contact.icon-mail
+              .label E-Mail
+              a.value(href="mailto:poletaev.vladislav@gmail.com") poletaev.vladislav@gmail.com
+            .contact.icon-telegram
+              .label Telegram
+              .value @poletaevvlad
+            .contact.icon-github
+              .label GitHub
+              a.value(href="https://github.com/poletaevvlad") github.com/poletaevvlad
+            hr.contact-divider
+            .contact.icon-map
+              .label: +tr("Место проживания", "Location")
+              .value: +tr("г. Донецк, Украина", "Donetsk, Ukraine")
 
-      section
-        h2 Профессиональный опыт
+          section
+            h2: +tr("Образование", "Education")
+            section.education
+              h4.name
+                .period 2018&ndash;2020
+                +tr("Магистратура", "Master's degree")
+              .institution: +tr(
+                "Донецкий национальный технический университет, г. Донецк, Украина.", 
+                "Donetsk national technical university, Donetsk, Ukraine"
+              )
+              p: +tr(
+                "Специальность 09.04.04#[br]«Программная инженерия»", 
+                "Software engeneering"
+              )
+              p: +tr("Cредний бал: 96,69/100", "GPA 96.69/100") 
 
-        section.project.no-divider
-          h4
-            .period 2014&ndash;н. в.
-            | Разработка и поддержка: Кулинарный блог «Домашняя кухня»
-          p Django-приложение, по которому генерируется статический сайт, развёртываемый на AWS S3. Поиск по сайту реализован на AWS&nbsp;Lambda&nbsp;+ Whoosh.
-          p Android-приложение, написанное на Flutter.
-          nav.links
-            a.with-icon.icon-google-play(href="https://play.google.com/store/apps/details?id=ua.pp.homecooking.android.app")
-              span.text Google Play
-            a(href="https://homecooking.pp.ua/") homecooking.pp.ua
+            section.education
+              h4.name
+                .period 2014&ndash;2018
+                +tr("Бакалавриат", "Bachelor's degree")
+              .institution: +tr(
+                "Донецкий национальный технический университет, г. Донецк, Украина.", 
+                "Donetsk national technical university, Donetsk, Ukraine"
+              )
+              p: +tr(
+                "Специальность 09.03.04#[br]«Инженерия программного обеспечения»", 
+                "Software engeneering"
+              )
+              p: +tr("Cредний бал: 97,52/100", "GPA 97.52/100") 
 
-      section
-        h2 Личные проекты
+        main.main
+          p.summary: +tr(
+            "Люблю решать сложные задачи, предпочитая работать над back-end. Желаю присоединиться к команде разработчиков в которой я мог бы совершенствовать свои профессиональные навыки и личные качества работая над решениями интересных и практических задач.",
+            "I love solving difficult problems while working on back-end software. I am seeking to join a team of developers where I would be able to grow professionaly and personally while working on interesting projects."
+          )
 
-        p.primary.with-divider Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код большинства из которых доступен на GitHub.
+          section
+            h2: +tr("Профессиональный опыт", "Professional experience")
 
-        section.project
-          h4
-            .period 2019
-            | CubeLang
-          p Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений вращательных головоломок, таких как Кубики Рубика. #[em (Python, Lark, pytest)]
-          nav.links
-            a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/cubelang")
-              span.text poletaevvlad/cubelang
+            section.project.no-divider
+              h4
+                .period: +tr("2014&ndash;н. в.", "2014 &ndash; present")
+                +tr(
+                  "Разработка и поддержка: Кулинарный блог «Домашняя кухня»",
+                  "Development and support: Culinary blog “HomeCooking.pp.ua”"
+                )
+              p: +tr(
+                "Django-приложение, по которому генерируется статический сайт, развёртываемый на AWS S3. Поиск по сайту реализован на AWS&nbsp;Lambda&nbsp;+ Whoosh.",
+                "A static website built using Django, deployable to AWS S3. The search functionality is implemented on AWS&nbsp;Lambda&nbsp;+ Whoosh."
+              )
+              p: +tr("Android-приложение, написанное на Flutter.", "Android application written in Flutter.")
+              nav.links
+                a.with-icon.icon-google-play(href="https://play.google.com/store/apps/details?id=ua.pp.homecooking.android.app")
+                  span.text Google Play
+                a(href="https://homecooking.pp.ua/") homecooking.pp.ua
 
-        section.project
-          h4
-            .period 2018, 2020
-            | KeypunchBot
-          p Бот для Telegram, генерирующий изображения перфокарт, на которых закодированы пользовательские сообщения. #[em (Python, Telegram Bot API, MongoDB, Heroku, Docker)]
-          nav.links
-            a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/KeypunchBot")
-              span.text poletaevvlad/KeypunchBot
+          section
+            h2: +tr("Личные проекты", "Pet projects")
 
-        section.project
-          h4
-            .period 2021
-            | DiceRobot
-          p Приложение для бросков виртуальных игральных костей произвольной формы с поддержкой арифметики над результатами, рассчётом вероятностей, историей бросков, переменными и сохранёнными выражениями. #[em (Flutter, Android, Firebase (Analytics, AdMob), Google Play Billing)]
-          nav.links
-            a.with-icon.icon-google-play(href="https://play.google.com/store/apps/details?id=io.github.poletaevvlad.diceroller")
-              span.text Google Play
-            a(href="https://dicerobot.pp.ua") dicerobot.pp.ua
+            p.primary.with-divider: +tr(
+              "Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код большинства из которых доступен на GitHub.",
+              "I believe that the only way to learn and to improve one's skill is to apply those skill. The following are some of the projects I've completed. The source code for most of them is available on GitHub."
+            )
 
-        section.project
-          h4
-            .period 2020
-            | anime-list-popup
-          p Расширение для браузера, отображающее и позволяющее редактировать контент учётной записи с сайта myanimelist.net. #[em (React, WebExtensions API, Авторизация OAuth 2.0)]
-          nav.links
-            a.only-icon.icon-firefox(href="https://addons.mozilla.org/en-US/firefox/addon/anime-list-popup/")
-            a.only-icon.icon-chrome(href="https://chrome.google.com/webstore/detail/anime-list-popup/glabhkacodgkcgnbccfkjhlkolcidkdo")
-            a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/anime-list-popup")
-              span.text poletaevvlad/anime-list-popup
+            section.project
+              h4
+                .period 2019
+                | CubeLang
+              p 
+                +tr(
+                  "Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений вращательных головоломок, таких как Кубики Рубика.", 
+                  "A procedural statically and strictly typed programming language designed for implementing solutions to the twisting cube puzzles such as Rubik's cubes."
+                ) 
+                em (Python, Lark, pytest)
+              nav.links
+                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/cubelang")
+                  span.text poletaevvlad/cubelang
 
-        section.project.no-divider
-          h4
-            .period 2018
-            | http-asm
-          p Сервер, написанный на ассемблере (x86_64, GNU/Linux) без зависимостей от сторонних библиотек (включая libc), реализующий подмножество HTTP 1.0, показ содержимого каталогов.
-          nav.links
-            a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/http-asm")
-              span.text poletaevvlad/http-asm
+            section.project
+              h4
+                .period 2018, 2020
+                | KeypunchBot
+              p
+                +tr(
+                  "Бот для Telegram, генерирующий изображения перфокарт и перфолент, на которых закодированы пользовательские сообщения.", 
+                  "A Telegram bot that generates images of puched cards and punched tape with user-submitted messages encoded on them."
+                )
+                em (Python, Telegram Bot API, MongoDB, Heroku, Docker)]
+              nav.links
+                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/KeypunchBot")
+                  span.text poletaevvlad/KeypunchBot
 
-    hr.bottom-line
+            section.project
+              h4
+                .period 2021
+                | DiceRobot
+              p 
+                +tr(
+                  "Приложение для бросков виртуальных игральных костей произвольной формы с поддержкой арифметики над результатами, рассчётом вероятностей, историей бросков, переменными и сохранёнными выражениями.",
+                  "An app for rolling arbitrary-shaped polyhedral dice with support for performing arithmetic on the result, rolls history, computing event probabilities, variables, and saved expressions"
+                )
+                em (Flutter, Android, Firebase (Analytics, AdMob), Google Play Billing)
+              nav.links
+                a.with-icon.icon-google-play(href="https://play.google.com/store/apps/details?id=io.github.poletaevvlad.diceroller")
+                  span.text Google Play
+                a(href="https://dicerobot.pp.ua") dicerobot.pp.ua
+
+            section.project
+              h4
+                .period 2020
+                | anime-list-popup
+              p 
+                +tr(
+                  "Расширение для браузера, отображающее и позволяющее редактировать контент учётной записи с сайта myanimelist.net.",
+                  "A browser extension for viewing and editing user's myanimelist.net account content."
+                )
+                em (React, WebExtensions API, OAuth 2.0)
+              nav.links
+                a.only-icon.icon-firefox(href="https://addons.mozilla.org/en-US/firefox/addon/anime-list-popup/")
+                a.only-icon.icon-chrome(href="https://chrome.google.com/webstore/detail/anime-list-popup/glabhkacodgkcgnbccfkjhlkolcidkdo")
+                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/anime-list-popup")
+                  span.text poletaevvlad/anime-list-popup
+
+            section.project.no-divider
+              h4
+                .period 2018
+                | http-asm
+              p: +tr(
+                "Сервер, написанный на ассемблере (x86_64, GNU/Linux) без зависимостей от сторонних библиотек (включая libc), реализующий подмножество HTTP 1.0, показ содержимого каталогов.",
+                "A web server written in x86_64 assembly for GNU/Linux without dependencies (including libc). It implementes a subset of HTTP 1.0 specification and supports directory listing."
+              )
+              nav.links
+                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/http-asm")
+                  span.text poletaevvlad/http-asm
+
+        hr.bottom-line
