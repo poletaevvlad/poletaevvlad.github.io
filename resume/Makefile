@@ -16,4 +16,4 @@ watch:
 	done
 
 clean:
-	rm document.html document.pdf styles.css styles.css.map
+	rm -f document.html document.pdf styles.css styles.css.map

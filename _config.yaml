@@ -12,6 +12,8 @@ sass:
   style: compressed
 
 navigation:
+  - url: /resume.pdf
+    label: Resume
   - url: https://github.com/poletaevvlad
     label: GitHub
 
