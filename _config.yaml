@@ -2,6 +2,7 @@ exclude:
   - Dockerfile
   - Makefile
   - load_repo_info.py
+  - resume
 
 include:
   - _pages
