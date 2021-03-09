@@ -16,9 +16,9 @@ html(lang="ru")
         .above-header
           +tr(
             "Актуальная версия этого резюме доступна на ", 
-            "The current version of this resume is available at "
+            "The latest version of this resume is available at "
           )
-          a(href="poletaevvlad.github.com/resume.pdf") poletaevvlad.github.com/resume.pdf
+          a(href="https://poletaevvlad.github.com/resume.pdf") poletaevvlad.github.com/resume.pdf
 
         header.header
           .content
@@ -46,7 +46,7 @@ html(lang="ru")
               .value 
                 +tr(
                   "русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).",
-                  "Russian, Ukrainian (native), English (intermediate)."
+                  "Russian, Ukrainian (native), English (upper-intermediate)."
                 )
 
           section
@@ -75,10 +75,11 @@ html(lang="ru")
                 "Донецкий национальный технический университет, г. Донецк, Украина.", 
                 "Donetsk national technical university, Donetsk, Ukraine"
               )
-              p: +tr(
-                "Специальность 09.04.04#[br]«Программная инженерия»", 
-                "Software engeneering"
-              )
+              p
+                if lang == "ru"
+                  | Специальность 09.04.04#[br]«Программная инженерия»
+                else
+                  | Software engeneering
               p: +tr("Cредний бал: 96,69/100", "GPA 96.69/100") 
 
             section.education
@@ -89,16 +90,17 @@ html(lang="ru")
                 "Донецкий национальный технический университет, г. Донецк, Украина.", 
                 "Donetsk national technical university, Donetsk, Ukraine"
               )
-              p: +tr(
-                "Специальность 09.03.04#[br]«Инженерия программного обеспечения»", 
-                "Software engeneering"
-              )
+              p
+                if lang == "ru"
+                  | Специальность 09.03.04#[br]«Инженерия программного обеспечения»
+                else
+                  | Software engeneering
               p: +tr("Cредний бал: 97,52/100", "GPA 97.52/100") 
 
         main.main
           p.summary: +tr(
-            "Люблю решать сложные задачи, предпочитая работать над back-end. Желаю присоединиться к команде разработчиков в которой я мог бы совершенствовать свои профессиональные навыки и личные качества работая над решениями интересных и практических задач.",
-            "I love solving difficult problems while working on back-end software. I am seeking to join a team of developers where I would be able to grow professionaly and personally while working on interesting projects."
+            "Я back-end разработчик, который понимает как устроен front-end и который любит решать сложные задачи. Желаю присоединиться к команде разработчиков в которой я мог бы совершенствовать свои профессиональные навыки и личные качества работая над решениями интересных и практических задач.",
+            "I am a back-end developer who understands how front-end works and who loves solving difficult problems. I am seeking to join a team of developers where I would be able to grow professionaly and personally while working on interesting projects."
           )
 
           section
@@ -113,9 +115,9 @@ html(lang="ru")
                 )
               p: +tr(
                 "Django-приложение, по которому генерируется статический сайт, развёртываемый на AWS S3. Поиск по сайту реализован на AWS&nbsp;Lambda&nbsp;+ Whoosh.",
-                "A static website built using Django, deployable to AWS S3. The search functionality is implemented on AWS&nbsp;Lambda&nbsp;+ Whoosh."
+                "A static website built using Django. It is deployed to AWS S3 and its search functionality is implemented on AWS&nbsp;Lambda&nbsp;+ Whoosh."
               )
-              p: +tr("Android-приложение, написанное на Flutter.", "Android application written in Flutter.")
+              p: +tr("Android-приложение, написанное на Flutter.", "Android application is written in Flutter.")
               nav.links
                 a.with-icon.icon-google-play(href="https://play.google.com/store/apps/details?id=ua.pp.homecooking.android.app")
                   span.text Google Play
@@ -126,7 +128,7 @@ html(lang="ru")
 
             p.primary.with-divider: +tr(
               "Лучший способ получения новых и углубления существующих навыков&nbsp;&mdash; их применение. Ниже приведены некоторые мои законченные проекты, код большинства из которых доступен на GitHub.",
-              "I believe that the only way to learn and to improve one's skill is to apply those skill. The following are some of the projects I've completed. The source code for most of them is available on GitHub."
+              "I believe that the only way to learn and to improve one's skills is to apply those skills. The following are some of the projects I've completed. The source code for most of them is available on GitHub."
             )
 
             section.project
@@ -136,11 +138,11 @@ html(lang="ru")
               p 
                 +tr(
                   "Процедурный статически и строго типизированный язык программирования, спроектированный для программирования решений вращательных головоломок, таких как Кубики Рубика.", 
-                  "A procedural statically and strictly typed programming language designed for implementing solutions to the twisting cube puzzles such as Rubik's cubes."
+                  "CubeLang is a procedural statically and strongly typed programming language designed for implementing solutions to the twisting cube puzzles such as Rubik's cubes."
                 ) 
                 em (Python, Lark, pytest)
               nav.links
-                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/cubelang")
+                a.with-icon.icon-github(href="https://github.com/poletaevvlad/cubelang")
                   span.text poletaevvlad/cubelang
 
             section.project
@@ -152,9 +154,9 @@ html(lang="ru")
                   "Бот для Telegram, генерирующий изображения перфокарт и перфолент, на которых закодированы пользовательские сообщения.", 
                   "A Telegram bot that generates images of puched cards and punched tape with user-submitted messages encoded on them."
                 )
-                em (Python, Telegram Bot API, MongoDB, Heroku, Docker)]
+                em (Python (PIL, tornado), Telegram Bot API, MongoDB, Heroku, Docker)]
               nav.links
-                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/KeypunchBot")
+                a.with-icon.icon-github(href="https://github.com/poletaevvlad/KeypunchBot")
                   span.text poletaevvlad/KeypunchBot
 
             section.project
@@ -164,7 +166,7 @@ html(lang="ru")
               p 
                 +tr(
                   "Приложение для бросков виртуальных игральных костей произвольной формы с поддержкой арифметики над результатами, рассчётом вероятностей, историей бросков, переменными и сохранёнными выражениями.",
-                  "An app for rolling arbitrary-shaped polyhedral dice with support for performing arithmetic on the result, rolls history, computing event probabilities, variables, and saved expressions"
+                  "DireRobot is an app for rolling arbitrary-shaped polyhedral dice, that supports arithmetic on the roll results, rolls history, event probabilitiy computation, custom variables, and saved expressions"
                 )
                 em (Flutter, Android, Firebase (Analytics, AdMob), Google Play Billing)
               nav.links
@@ -179,13 +181,13 @@ html(lang="ru")
               p 
                 +tr(
                   "Расширение для браузера, отображающее и позволяющее редактировать контент учётной записи с сайта myanimelist.net.",
-                  "A browser extension for viewing and editing user's myanimelist.net account content."
+                  "Anime List Popup is a browser extension for viewing and editing the user's myanimelist.net account content."
                 )
                 em (React, WebExtensions API, OAuth 2.0)
               nav.links
                 a.only-icon.icon-firefox(href="https://addons.mozilla.org/en-US/firefox/addon/anime-list-popup/")
                 a.only-icon.icon-chrome(href="https://chrome.google.com/webstore/detail/anime-list-popup/glabhkacodgkcgnbccfkjhlkolcidkdo")
-                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/anime-list-popup")
+                a.with-icon.icon-github(href="https://github.com/poletaevvlad/anime-list-popup")
                   span.text poletaevvlad/anime-list-popup
 
             section.project.no-divider
@@ -194,10 +196,10 @@ html(lang="ru")
                 | http-asm
               p: +tr(
                 "Сервер, написанный на ассемблере (x86-64, GNU/Linux) без зависимостей от сторонних библиотек (включая libc), реализующий подмножество HTTP 1.0, показ содержимого каталогов.",
-                "A web server written in x86-64 assembly for GNU/Linux without dependencies (including libc). It implementes a subset of HTTP 1.0 specification and supports directory listing."
+                "A web server, written in x86-64 assembly for GNU/Linux without dependencies (including libc). It implementes a subset of HTTP 1.0 specification and supports directory listing."
               )
               nav.links
-                a.with-icon.icon-github(href="https://guthub.com/poletaevvlad/http-asm")
+                a.with-icon.icon-github(href="https://github.com/poletaevvlad/http-asm")
                   span.text poletaevvlad/http-asm
 
         hr.bottom-line
