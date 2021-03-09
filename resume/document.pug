@@ -86,8 +86,9 @@ html(lang="ru")
                 ul
                   li: +tr("Поиск изображений по содержимому (CBIR)", "Content-based image retrieval (CBIR)")
                   li 
-                    +tr("Выделение признаков: ", "Feature extraction: ")
-                    em SIFT, ORB
+                    +tr("Выделение признаков ", "Feature extraction ")
+                    | (SIFT, ORB): 
+                    em OpenCV, numpy, scikit-learn
                   li
                     +tr("Параллельные вычисления: ", "Parallel computations: ")
                     em OpenCL, OpenMP
