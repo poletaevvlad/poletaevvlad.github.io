@@ -77,10 +77,29 @@ html(lang="ru")
               )
               p
                 if lang == "ru"
-                  | Специальность 09.04.04#[br]«Программная инженерия»
+                  | #[small 09.04.04] Программная инженерия
                 else
                   | Software engeneering
               p: +tr("Cредний бал: 96,69/100", "GPA 96.69/100") 
+              section.thesis-project
+                h5: +tr("Магистерская диссертация", "Master's thesis")
+                ul
+                  li: +tr("Поиск изображений по содержимому (CBIR)", "Content-based image retrieval (CBIR)")
+                  li 
+                    +tr("Выделение признаков: ", "Feature extraction: ")
+                    em SIFT, ORB
+                  li
+                    +tr("Параллельные вычисления: ", "Parallel computations: ")
+                    em OpenCL, OpenMP
+                  li
+                    +tr("Микросервисная архитектура: ", "Microservice architecture: ")
+                    if lang == "ru"
+                      br
+                    em docker-compose, Tornado+Flask, RabbitMQ
+                  li
+                    +tr("Хранение данных: ", "Data storage: ")
+                    em MongoDB
+                  li Front-end: #[em TypeScript+React]
 
             section.education
               h4.name
@@ -92,7 +111,7 @@ html(lang="ru")
               )
               p
                 if lang == "ru"
-                  | Специальность 09.03.04#[br]«Инженерия программного обеспечения»
+                  | #[small 09.03.04] Инженерия программного обеспечения
                 else
                   | Software engeneering
               p: +tr("Cредний бал: 97,52/100", "GPA 97.52/100") 
