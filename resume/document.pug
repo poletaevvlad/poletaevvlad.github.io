@@ -12,7 +12,13 @@ html(lang="ru")
           when "ru": != rus
           when "en": != eng
 
-      .page(lang=lang)
+      case lang
+        when "ru"
+          - var languageName = "Русский"
+        when "en"
+          - var languageName = "English"
+
+      .page(lang=lang, data-bookmark=languageName)
         .above-header
           +tr(
             "Актуальная версия этого резюме доступна на ", 

@@ -16,6 +16,13 @@ $header-height: 35mm
   size: A4
   margin: 0
 
+.page
+  bookmark-level: 1
+  bookmark-label: attr(data-bookmark)
+
+h1, h2, h3, h4, h5, h6
+  bookmark-level: none
+
 body
   font-family: "Fira Sans", sans-serif
   font-size: 9pt
@@ -278,7 +285,6 @@ hr.contact-divider
   border-style: none
   height: 0.2mm
   background-color: $accent-color
-
 
 .summary
   margin: 0
