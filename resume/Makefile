@@ -9,7 +9,7 @@ styles.css: $(wildcard styles/*.sass)
 
 %PHONY: watch clean
 
-watch:
+watch: document.pdf
 	while true; do \
 		inotifywait -e close_write document.pug styles/*.sass;\
 		make;\
