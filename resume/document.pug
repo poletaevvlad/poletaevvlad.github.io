@@ -49,11 +49,22 @@ html(lang="ru")
               .value Git, Docker, docker-compose, Linux.
             .entry
               .label: +tr("Языки", "Languages")
-              .value 
+              .value.no-break
                 +tr(
-                  "русский, украинский (носитель), английский (уверено читаю и воспринимаю на слух техническую и художественную речь).",
-                  "Russian, Ukrainian (native), English (upper-intermediate)."
+                  "русский, украинский (носитель), английский",
+                  "Russian, Ukrainian (native), English"
                 )
+                | &nbsp;(C1/C2)#[sup &thinsp;1].
+                div.ceritificate 
+                  sup.footnote-num 1
+                  .cert-name: +tr(
+                    " Сертификат EF SET 78/100 (C2 Proficient)", 
+                    " EF SET Certificate 78/100 (C2 Proficient)"
+                  )
+                  .cert-description 
+                    | (Reading, listening; on-line; 
+                    a(href="https://www.efset.org/cert/idGLD6") efset.org/cert/idGLD6
+                    | )
 
           section
             h2: +tr("Контактная информация", "Contacts")
@@ -103,12 +114,7 @@ html(lang="ru")
                     em OpenCL, OpenMP
                   li
                     +tr("Микросервисная архитектура: ", "Microservice architecture: ")
-                    if lang == "ru"
-                      br
-                    em docker-compose, Tornado+Flask, RabbitMQ
-                  li
-                    +tr("Хранение данных: ", "Data storage: ")
-                    em MongoDB
+                    em.nobreak Tornado+Flask, RabbitMQ, docker-compose, MongoDB
                   li Front-end: #[em TypeScript+React]
 
             section.education

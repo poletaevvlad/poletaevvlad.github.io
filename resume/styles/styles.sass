@@ -32,6 +32,9 @@ body
   margin: 0
   hyphens: auto
 
+.nobreak
+  hyphens: none
+
 .page
   page-break-before: always
 
@@ -230,7 +233,7 @@ p.primary
   font-size: 9pt
 
 .contact
-  margin-bottom: 3mm
+  margin-bottom: 2mm
   padding-left: 1mm
   background-repeat: no-repeat
   background-position: 1mm center
@@ -279,6 +282,23 @@ hr.contact-divider
 
   .value
     margin-left: 1.5mm
+
+  .ceritificate
+    font-size: 8pt
+    line-height: 1.3em
+
+    .footnote-num
+      float: left
+
+    .cert-name, .cert-description
+      margin-left: 5pt
+
+    .cert-description
+      font-style: italic
+
+      a
+        color: darken($accent-color, 10%)
+        text-decoration-color: fade-out($accent-color, 0.5)
 
 .bottom-line
   position: fixed
