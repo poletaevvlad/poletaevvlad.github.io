@@ -1,7 +1,7 @@
 DOCKERIM = sitegen
 
 build:
-	docker run -v $(shell pwd):/site $(DOCKERIM) build
+	docker run --rm -v $(shell pwd):/site $(DOCKERIM) build
 	cd resume && make clean document.pdf && cp document.pdf ../_site/resume.pdf
 
 serve:
