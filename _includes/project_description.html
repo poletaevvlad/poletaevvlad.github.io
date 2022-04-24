@@ -33,6 +33,12 @@
   </div>
 {% endif %}
 
+{% if project.message %}
+  <div class="links_message">
+    {{ project.message }}
+  </div>
+{% endif %}
+
 {% if project.links %}
   <nav class="links_list">
     {% for link in project.links %}
