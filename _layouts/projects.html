@@ -34,43 +34,7 @@ layout: base
         {% endfor %}
       {% endfor %}
     </section>
-
-    <section>
-      <h2>My Formal Education</h2>
-
-      {% assign edu = site.data.education %}
-      <div class="large extra">
-        <div class="extra_row" itemprop="alumniOf" itemscope itemtype="https://schema.org/CollegeOrUniversity">
-          <div class="extra_label">Institution:</div>
-          <div class="extra_content">
-            <span itemprop="name">{{ edu.institution.name }}</span>,
-            <span itemprop="location" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="addressLocality">{{ edu.institution.city }}</span>, <span itemprop="addressCountry">{{ edu.institution.country }}</span></span></div>
-        </div>
-
-        <div class="extra_row">
-          <div class="extra_label">Duration:</div>
-          <div class="extra_content">
-            {{ edu.duration.start.month }} {{ edu.duration.start.year }} &ndash;
-            {{ edu.duration.end.month }} {{ edu.duration.end.year }}
-            <span class="extra_details">({{ edu.duration.extra }})</span></div>
-        </div>
-
-        {% for degree in edu.degrees %}
-        <div class="extra_row" itemscope itemtype="https://schema.org/EducationalOccupationalCredential" itemprop="hasCredential">
-          <div class="extra_label"><span itemprop="educationalLevel">{{ degree.type }}</span>'s <span itemprop="credentialCategory">degree</span>:</div>
-          <div class="extra_content">
-            <div>
-              {{ degree.type }}'s degree in {{ degree.area }}.
-              <span class="extra_details">({{ degree.duration_semesters }}&nbsp;semesters)</span>
-            </div>
-            <div>Thesis topic: <span class="extra_details">“<span itemprop="headline">{{ degree.topic }}</span>” (<span itemprop="keywords">{{ degree.keywords }}</span>){% if degree.links %}; see {% for link in degree.links %}<a href="{{ link.href }}">{{ link.label }}</a>{% if forloop.last != true %}, {% endif %}</a>{% endfor %}{% endif %}.</span></div>
-            <div><abbr title="Grade Point Average">GPA</abbr>: <span class="extra_details">{{ degree.gpa }} out of 100</span>.</div>
-          </div>
-        </div>
-        {% endfor %}
-
-    </section>
-  </main>
+ </main>
 </div>
 
 <footer class="content">
