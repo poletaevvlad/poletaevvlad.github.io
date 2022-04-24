@@ -1,5 +1,22 @@
-- title: My Projects
-  projects:
+- projects:
+    - description: |
+        A podcast player and subscription organizer with a terminal-based user interface.
+      extra:
+        - label: "Technology stack:"
+          content: Rust (tui/crossterm, actix), GStreamer, SQLite, DBus
+        - label: "Features:"
+          content: |
+            Subscription management and automatic feed updates, keeping track of the
+            status of each episode, online search for new feeds to subscribe to,
+            flexible theming and fully configurable keybindings, MPRIS support.
+        - label: "Links:"
+          content: |
+            Hedgehog manual (<a href="https://poletaevvlad.github.io/Hedgehog/hedgehog.1.html">hedgehog.1</a>),
+            pre-build binaries (<a href="https://github.com/poletaevvlad/Hedgehog/releases">Linux and Windows</a>).
+      repo:
+        owner: poletaevvlad
+        name: Hedgehog
+
     - name: DiceRobot
       description: |
         DiceRobot is a dice rolling app with sheet management capabilities. It will take
@@ -32,9 +49,6 @@
           label: Website
           url: https://dicerobot.pp.ua
 
-
-- title: My Open Source Pet Projects
-  projects:
     - description: |
         Procedural domain-specific statically and strongly typed programming language
         for solving twisting cube puzzles, such as Rubik’s cubes. Compiles into

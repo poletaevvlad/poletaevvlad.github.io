@@ -26,7 +26,7 @@ layout: base
   <main class="content">
     <section class="projects-list">
       {% for section in site.data.projects %}
-        <h2>{{ section.title }}</h2>
+          {% if section.title %}<h2>{{ section.title }}</h2>{% endif %}
         {% for project in section.projects %}
           <article class="project" itemscope itemtype="https://schema.org/SoftwareSourceCode">
             {% include project_description.html %}
