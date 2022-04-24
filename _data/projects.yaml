@@ -128,10 +128,3 @@
       repo:
         owner: poletaevvlad
         name: http-asm
-
-    - description: |
-        A reverse proxy implemented in Rust that enables authentication for the TiddlyWiki
-        personal wiki. It is compatible with TiddlyWiki node.js server.
-      repo:
-        owner: poletaevvlad
-        name: tiddlyproxy
