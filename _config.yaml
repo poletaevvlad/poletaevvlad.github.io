@@ -3,6 +3,8 @@ exclude:
   - Makefile
   - load_repo_info.py
   - resume
+  - poetry.lock
+  - pyproject.toml
 
 include:
   - _pages

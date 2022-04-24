@@ -1,14 +1,18 @@
 #! /bin/env python3
 import os
 import re
-from pathlib import Path
 from collections import defaultdict
-import yaml
-try:
-    from yaml import CLoader as Loader, CDumper as Dumper
-except ImportError:
-    from yaml import Loader, Dumper
+from pathlib import Path
+
 import requests
+import yaml
+
+try:
+    from yaml import CDumper as Dumper
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Dumper, Loader
+
 
 RE_PAGE_NUMBER = re.compile(r"(?:&|\?)page=(\d+)")
 
