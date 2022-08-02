@@ -1,7 +1,0 @@
-{
-  "name": "resume",
-  "dependencies": {
-    "pug-cli": "^1.0.0-alpha6",
-    "sass": "^1.32.8"
-  }
-}
