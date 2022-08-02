@@ -5,6 +5,8 @@ exclude:
   - resume
   - poetry.lock
   - pyproject.toml
+  - requirements.txt
+  - deploy.sh
 
 include:
   - _pages
@@ -14,7 +16,7 @@ sass:
   style: compressed
 
 navigation:
-  - url: /resume.pdf
+  - url: /Vlad-Polietaiev-Resume.pdf
     label: Resume
   - url: https://github.com/poletaevvlad
     label: GitHub
