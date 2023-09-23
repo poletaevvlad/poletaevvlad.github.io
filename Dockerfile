@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:3.2.2-alpine
 RUN apk add make gcc g++ libc-dev
 RUN gem install jekyll bundler
 
